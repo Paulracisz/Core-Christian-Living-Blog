@@ -12,6 +12,10 @@ h2 {
   text-align: center;
 }
 
+p {
+  font-weight: bold;
+}
+
 .big-box {
   display: flex;
   justify-content: center;
