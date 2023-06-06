@@ -8,6 +8,36 @@
   font-weight: normal;
 }
 
+
+.big-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.article-title {
+  font-weight: bold;
+  border-bottom: 2px solid black;
+  margin-bottom: 10px;
+  
+}
+
+.article-box {
+  background-color: whitesmoke;
+  color: black;
+  padding: 15px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.article-image {
+  width: 20em;
+}
+
 a,
 .green {
   text-decoration: none;

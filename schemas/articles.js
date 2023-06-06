@@ -17,6 +17,14 @@ export default {
       name: 'Body',
       type: 'string',
       title: 'body'
+    },{
+      name: 'image',
+      type: 'image',
+      title: 'image'
+    },{
+      name: 'imageUrl',
+      type: 'string',
+      title: 'imageUrl'
     }
   ]
 }

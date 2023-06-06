@@ -1,7 +1,13 @@
 <template>
   <div>
-    <h1>{{ article.title }}</h1>
-    <div v-html="article.content" />
+    <h1>Articles</h1>
+    <div class="big-box">
+      <div class="article-box" v-for="article in result" :key="article._id">
+        <h1 class="article-title">{{ article.title }}</h1>
+        <img :src="article.imageUrl" :alt="article.title" class="article-image" />
+        <p class="article-body">{{ article.Body }}</p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -9,45 +15,27 @@
 export default {
   data() {
     return {
-      article: null
+      result: [] // Define the result property as an empty array initially
     };
   },
   mounted() {
-    // Replace 'YOUR_DATASET' with your Sanity.io dataset name
-    const dataset = 'production';
-
-    // Replace 'YOUR_PROJECT_ID' with your Sanity.io project ID
-    const projectId = 'xinvfi3s';
-
-    // Replace 'YOUR_ARTICLE_ID' with the ID of the article you want to fetch
-    const articleId = 'YOUR_ARTICLE_ID';
-
-    this.fetchArticle(articleId, dataset, projectId);
-  },
-  methods: {
-    fetchArticle(articleId, dataset, projectId) {
-      // Fetch the article from the Sanity.io API endpoint
-      fetch(
-        `https://${projectId}.api.sanity.io/v1/data/doc/${dataset}/${articleId}`,
-        {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        }
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          if (data && data._id) {
-            this.article = data;
-          } else {
-            console.error('Article not found');
-          }
-        })
-        .catch((error) => {
-          console.error('Error fetching article:', error);
+    let PROJECT_ID = 'xinvfi3s';
+    let DATASET = 'production';
+    let QUERY = encodeURIComponent('*[_type == "article"]');
+    let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
+    fetch(URL)
+      .then((res) => res.json())
+      .then(({ result }) => {
+        this.result = result.map(article => {
+          // Extract the URL for the first image in the article's "images" array
+          const imageUrl = article.image && article.image[0]?.asset?.url;
+          return {
+            ...article
+          };
         });
-    }
+        console.log(result[0].Body);
+      })
+      .catch((err) => console.error(err));
   }
 };
 </script>
