@@ -1,5 +1,7 @@
 <template>
   <div>
+    <h1 class="title"> Core Christian Living Blog</h1>
+    <h2>A blog About Christian Family and Living, and Core Christian Principles</h2>
     <h1>Articles</h1>
     <div class="big-box">
       <div class="article-box" v-for="article in result" :key="article._id">

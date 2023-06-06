@@ -8,6 +8,9 @@
   font-weight: normal;
 }
 
+h2 {
+  text-align: center;
+}
 
 .big-box {
   display: flex;
@@ -20,6 +23,12 @@
   border-bottom: 2px solid black;
   margin-bottom: 10px;
   
+}
+
+.title {
+  font-size: 4em;
+  font-weight: bold;
+  text-align: center;
 }
 
 .article-box {
@@ -59,7 +68,6 @@ a,
 
   #app {
     display: grid;
-    grid-template-columns: 1fr 1fr;
     padding: 0 2rem;
   }
 }
