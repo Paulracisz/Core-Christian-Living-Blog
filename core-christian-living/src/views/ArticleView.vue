@@ -1,5 +1,8 @@
 <template>
 <h1>You made it to the articles</h1>
+      <RouterLink to="/">
+        Back To Home
+      </RouterLink>
 </template>
 
 <script>
