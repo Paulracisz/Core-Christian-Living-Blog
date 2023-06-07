@@ -1,15 +1,15 @@
 @import './base.css';
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-
-  font-weight: normal;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
 }
 
 h2 {
   text-align: center;
+  margin-bottom: 5em;
 }
 
 p {
@@ -44,7 +44,12 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
+  transition: all 0.3s ease;
+}
+
+.article-box:hover {
+  cursor: pointer;
+  filter: brightness(50%);
 }
 
 .article-image {

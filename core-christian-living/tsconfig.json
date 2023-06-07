@@ -1,11 +1,18 @@
 {
-  "files": [],
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
-    },
-    {
-      "path": "./tsconfig.app.json"
-    }
-  ]
+  "compilerOptions": {
+    "module": "esnext",
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "lib": ["ESNext", "DOM"],
+    "types": ["vite/client"],
+    "plugins": [
+      {
+        "name": "vite:vue-tsc",
+        "transform": "@vitejs/plugin-vue/tsc",
+        "exposeFilename": false
+      }
+    ]
+  },
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue"]
 }
