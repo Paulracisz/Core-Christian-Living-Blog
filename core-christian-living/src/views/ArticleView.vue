@@ -8,6 +8,18 @@
       </RouterLink>
 </template>
 
+<!-- 
+Features to add:
+Daily Bible Verse from Bible Verse API []
+Comment section users can log in with social medias []
+Figure out how to render the article previews on the homepage in a row format (side by side) []
+Create About page []
+Clean up date for articles []
+add created by []
+MIT License []
+style article page []
+-->
+
 <script>
 export default {
   name: 'ArticlePage',
@@ -35,7 +47,7 @@ export default {
             let formattedDate = Date(currentArticle._createdAt)
             let image = document.querySelector("img")
             image.src = currentArticle.imageUrl
-            date.textContent = ${formattedDate.toLocaleString()}
+            date.textContent = `${formattedDate.toLocaleString()}`
             text.textContent = currentArticle.Body
             h1.textContent = currentArticle.title
           }
