@@ -41,7 +41,6 @@ export default {
             imageUrl
           };
         });
-        console.log(result)
       })
       .catch((err) => console.error(err));
   },

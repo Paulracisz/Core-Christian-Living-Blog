@@ -1,5 +1,8 @@
 <template>
-<h1>You made it to the articles</h1>
+<h1></h1>
+<p id="date"></p>
+<img />
+<p id="text"></p>
       <RouterLink to="/">
         Back To Home
       </RouterLink>
@@ -14,30 +17,40 @@ export default {
     };
   },
   created() {
+    let currentArticle = {}
     let PROJECT_ID = 'xinvfi3s';
     let DATASET = 'production';
     let QUERY = encodeURIComponent('*[_type == "article"]');
     let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
+    const articleId = this.$route.params.id;
     fetch(URL)
       .then((res) => res.json())
       .then(({ result }) => {
-        this.result = result.map((article) => {
-          return {
-            ...article
-          };
+       result.map((article) => {
+          if (article._id === articleId) {
+             currentArticle = article
+            let h1 = document.querySelector("h1")
+            let text = document.getElementById("text")
+            let date = document.getElementById("date")
+            let formattedDate = Date(currentArticle._createdAt)
+            let image = document.querySelector("img")
+            image.src = currentArticle.imageUrl
+            date.textContent = ${formattedDate.toLocaleString()}
+            text.textContent = currentArticle.Body
+            h1.textContent = currentArticle.title
+          }
         });
-        console.log(result)
       })
       .catch((err) => console.error(err));
-    // Fetch the article details from the API using the provided article ID
-    const articleId = this.$route.params.id;
-    // Make an API call to retrieve the article based on the articleId
-    // Assign the retrieved article data to the 'article' data property
   },
 }
 </script>
 
 <style>
+img {
+  width: 30em;
+}
+
 @media (min-width: 1024px) {
   .about {
     min-height: 100vh;
