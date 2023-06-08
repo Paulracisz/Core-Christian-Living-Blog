@@ -20,11 +20,13 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  color:#9F9F9F;
 }
 
 .article-title {
   font-weight: bold;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #9F9F9F;
   margin-bottom: 10px;
   
 }
@@ -36,12 +38,11 @@ p {
 }
 
 .article-box {
-  background-color: whitesmoke;
-  color: black;
+  color: #9F9F9F;
   padding: 15px;
   margin: 10px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   transition: all 0.3s ease;
@@ -63,11 +64,6 @@ a,
   transition: 0.4s;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
 
 @media (min-width: 1024px) {
   body {

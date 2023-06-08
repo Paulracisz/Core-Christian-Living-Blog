@@ -6,14 +6,14 @@
     </div>
     <h2>A blog About Christian Family and Living, and Core Christian Principles</h2>
     <h1>Articles</h1>
-      <RouterLink to="/article">
+    <div class="article-box" v-for="article in result" :key="article._id">
+      <RouterLink :to="`/article/${article._id}`">
         <div class="big-box">
-          <div class="article-box" v-for="article in result" :key="article._id">
             <h1 class="article-title">{{ article.title }}</h1>
             <img :src="article.imageUrl" :alt="article.title" class="article-image" />
           </div>
+        </RouterLink>
         </div>
-      </RouterLink>
   </div>
 </template>
 
