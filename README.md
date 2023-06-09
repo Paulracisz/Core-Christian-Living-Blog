@@ -29,4 +29,4 @@ This project was built using the following technologies:
 If you wish to contribute to this project, please submit a pull request.
 
 ## Credits and License
-This project was created by Paul Racisz and is licensed by the [MIT License](https://github.com/Paulracisz/Core-Christian-Living-Blog/blob/main/LICENSE).
+This project was created by Paul Racisz and is licensed by the [Apache License 2.0](https://github.com/Paulracisz/Core-Christian-Living-Blog/blob/main/LICENSE).
