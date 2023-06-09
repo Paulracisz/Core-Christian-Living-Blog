@@ -12,7 +12,7 @@ To get started with the blog, follow these steps:
 3. Start the development server by running npm run dev.
 4. Open http://localhost:5173/ in your browser to view the blog.
 ## Features
-The blog has articles about biblical studies, topics, and various teachings of the bible as well as a daily verse section, a comment section for each article, images and videos, and an about page,
+The blog has articles about biblical studies, topics, and various teachings of the bible as well as a daily verse section, a comment section for each article, images and videos, and an about page.
 ## Technologies Used
 This project was built using the following technologies:
 
