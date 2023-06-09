@@ -12,12 +12,14 @@
 Features to add:
 Daily Bible Verse from Bible Verse API []
 Comment section users can log in with social medias []
-Figure out how to render the article previews on the homepage in a row format (side by side) []
 Create About page []
 Clean up date for articles []
-add created by []
+add website created by []
 MIT License []
 style article page []
+
+Complete:
+Figure out how to render the article previews on the homepage in a row format (side by side) [X]
 -->
 
 <script>

@@ -14,11 +14,13 @@
           </div>
         </RouterLink>
         </div>
+        <Dailyverse />
   </div>
 </template>
 
 <script>
 import { RouterLink } from 'vue-router';
+import Dailyverse from '../components/Dailyverse.vue';
 
 export default {
   data() {

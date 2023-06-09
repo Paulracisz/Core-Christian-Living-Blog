@@ -38,6 +38,7 @@ p {
 }
 
 .article-box {
+  display: inline-block;
   color: #9F9F9F;
   padding: 15px;
   margin: 10px;
