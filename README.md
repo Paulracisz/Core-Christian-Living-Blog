@@ -10,7 +10,7 @@ To get started with the blog, follow these steps:
 1. Clone the repository.
 2. Install dependencies by running npm install.
 3. Start the development server by running npm run dev.
-4. Open http://localhost:5173/ in your browser to play the game.
+4. Open http://localhost:5173/ in your browser to view the blog.
 ## Features
 The blog has articles about biblical studies, topics, and various teachings of the bible as well as a daily verse section, a comment section for each artilce, images and videos, and an about page,
 ## Technologies Used
