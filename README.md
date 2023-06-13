@@ -1,9 +1,32 @@
-# Sanity Clean Content Studio
+# Core Christian Living Blog
+This project is a blog featuring topics of Christian living, Christian famililes, and studies and teachings of the scriptures.
 
-Congratulations, you have now installed the Sanity Content Studio, an open source real-time content editing environment connected to the Sanity backend.
+## Deployment
+To view the deployed webpage, click here: (will be deployed soon).
 
-Now you can do the following things:
+## Getting Started
+To get started with the blog, follow these steps:
 
-- [Read “getting started” in the docs](https://www.sanity.io/docs/introduction/getting-started?utm_source=readme)
-- [Join the community Slack](https://slack.sanity.io/?utm_source=readme)
-- [Extend and build plugins](https://www.sanity.io/docs/content-studio/extending?utm_source=readme)
+1. Clone the repository.
+2. Install dependencies by running npm install.
+3. Start the development server by running npm run dev.
+4. Open http://localhost:5173/ in your browser to view the blog.
+## Features
+The blog has articles about biblical studies, topics, and various teachings of the bible as well as a daily verse section, a comment section for each article, images and videos, and an about page.
+## Technologies Used
+This project was built using the following technologies:
+
+* Vue.js
+* Javascript
+* Vite
+* CSS
+* HTML
+* TypeScript
+* Vue Router
+* Sanity IO
+* Axios
+## Contributing
+If you wish to contribute to this project, please submit a pull request.
+
+## Credits and License
+This project was created by Paul Racisz and is licensed by the [Apache License 2.0](https://github.com/Paulracisz/Core-Christian-Living-Blog/blob/main/LICENSE).
