@@ -1,9 +1,11 @@
 <template>
-<h1></h1>
+<h1 id="article-header"></h1>
 <p id="date"></p>
-<img />
+<div id="article-flex">
+<img id="article-thumb" />
+</div>
 <p id="text"></p>
-      <RouterLink to="/">
+      <RouterLink id="route" to="/">
         Back To Home
       </RouterLink>
 </template>
@@ -71,5 +73,29 @@ img {
     display: flex;
     align-items: center;
   }
+  
+  #date {
+    margin: 2em;
+  }
+  
+  #text {
+    margin: 2em;
+    font-size: 1.5em;
+  }
+  
+  #route {
+    text-align: center;
+  }
+  
+  #article-header {
+    font-size: 5em;
+  }
+  
+  #article-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
 }
 </style>
