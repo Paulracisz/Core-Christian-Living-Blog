@@ -85,6 +85,14 @@ img {
   
   #route {
     text-align: center;
+    font-size: 2em;
+    transition: 0.3 ease all;
+    margin-bottom: 2em;
+  }
+  
+  #route:hover {
+    text-decoration: underline;
+    filter: brightness(50%);
   }
   
   #article-header {
