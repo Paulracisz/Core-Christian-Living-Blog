@@ -23,14 +23,15 @@
 <!-- 
 Features to add:
 Daily Bible Verse from Bible Verse API []
+Style articles to break text into different paragraphs according to schema []
 Comment section users can log in with social medias []
 Create About page []
-Clean up date for articles []
 add website created by []
-MIT License []
-style article page []
 
 Complete:
+Clean up date for articles [X]
+MIT License [X]
+style article page [X]
 Figure out how to render the article previews on the homepage in a row format (side by side) [X]
 -->
 
