@@ -9,12 +9,23 @@
 <div id="article-flex">
 <img id="article-thumb" />
 </div>
-<img id="image-2" />
 <div id="text-flex">
-<p id="text"></p>
-</div>
+  <p id="text"></p>
+  <img id="image-2" />
+  <br/>
+<p id="par2"></p>
 <img id="image-3" />
+<br/>
+<p id="par3"></p>
+<br/>
+<p id="par4"></p>
 <img id="image-4" />
+<br/>
+<p id="par5"></p>
+<br/>
+<p id="par6"></p>
+<br/>
+</div>
       <RouterLink id="route" to="/">
         Back To Home
       </RouterLink>
@@ -62,10 +73,20 @@ export default {
             let createdBy = document.getElementById("created-by")
             let formattedDate = new Date(currentArticle._createdAt)
             let image = document.getElementById("article-thumb")
+            let par2 = document.getElementById("par2")
+            let par3 = document.getElementById("par3")
+            let par4 = document.getElementById("par4")
+            let par5 = document.getElementById("par5")
+            let par6 = document.getElementById("par6")
             image.src = currentArticle.imageUrl
             date.textContent = `${formattedDate.toGMTString()}`
             createdBy.textContent = `Created By: ${currentArticle.createdBy}`
             text.textContent = currentArticle.Body
+            par2.textContent = currentArticle.paragraph2
+            par3.textContent = currentArticle.paragraph3
+            par4.textContent = currentArticle.paragraph4
+            par5.textContent = currentArticle.paragraph5
+            par6.textContent = currentArticle.paragraph6
             h1.textContent = currentArticle.title
             if (currentArticle.image2) {
               let image2 = document.getElementById("image-2")
@@ -92,6 +113,10 @@ img {
   width: 30em;
 }
 
+p {
+  line-height: 150%;
+}
+
   .about {
     min-height: 100vh;
     display: flex;
@@ -104,7 +129,6 @@ img {
   
   #text {
     margin: 2em;
-    font-size: 1.5em;
   }
   
   #p-flex {
@@ -127,6 +151,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     max-width: 1000px;
   }
   

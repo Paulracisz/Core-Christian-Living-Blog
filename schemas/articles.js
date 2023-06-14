@@ -34,6 +34,14 @@ export default {
       name: 'paragraph4',
       type: 'string',
       title: 'paragraph4'
+    }, {
+      name: 'paragraph5',
+      type: 'string',
+      title: 'paragraph5'
+    },{
+      name: 'paragraph6',
+      type: 'string',
+      title: 'paragraph6'
     },{
       name: 'image',
       type: 'image',
