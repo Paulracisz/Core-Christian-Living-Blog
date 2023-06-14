@@ -1,10 +1,16 @@
 <template>
 <h1 id="article-header"></h1>
+<div id="p-flex">
 <p id="date"></p>
+<p id="created-by"></p>
+</div>
 <div id="article-flex">
 <img id="article-thumb" />
 </div>
+<img id="image-2" />
 <p id="text"></p>
+<img id="image-3" />
+<img id="image-4" />
       <RouterLink id="route" to="/">
         Back To Home
       </RouterLink>
@@ -48,12 +54,26 @@ export default {
             let h1 = document.querySelector("h1")
             let text = document.getElementById("text")
             let date = document.getElementById("date")
-            let formattedDate = Date(currentArticle._createdAt)
-            let image = document.querySelector("img")
+            let createdBy = document.getElementById("created-by")
+            let formattedDate = new Date(currentArticle._createdAt)
+            let image = document.getElementById("article-thumb")
             image.src = currentArticle.imageUrl
-            date.textContent = `${formattedDate.toLocaleString()}`
+            date.textContent = `${formattedDate.toGMTString()}`
+            createdBy.textContent = `Created By: ${currentArticle.createdBy}`
             text.textContent = currentArticle.Body
             h1.textContent = currentArticle.title
+            if (currentArticle.image2) {
+              let image2 = document.getElementById("image-2")
+              image2.src = currentArticle.image2Url
+            }
+            if (currentArticle.image3) {
+              let image3 = document.getElementById("image-3")
+              image3.src = currentArticle.image3Url
+            }
+            if (currentArticle.image4) {
+              let image4 = document.getElementById("image-4")
+              image4.src = currentArticle.image4Url
+            }
           }
         });
       })
@@ -67,7 +87,6 @@ img {
   width: 30em;
 }
 
-@media (min-width: 1024px) {
   .about {
     min-height: 100vh;
     display: flex;
@@ -81,6 +100,14 @@ img {
   #text {
     margin: 2em;
     font-size: 1.5em;
+  }
+  
+  #p-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 2em;
   }
   
   #route {
@@ -104,6 +131,5 @@ img {
     justify-content: center;
     align-items: center;
   }
-  
-}
+
 </style>

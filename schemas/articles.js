@@ -9,6 +9,11 @@ export default {
     type: 'string',
     title: 'ID'
   }, 
+  {
+    name: 'createdBy',
+    type: 'string',
+    title: 'createdby'
+  }, 
     {
       name: 'title',
       type: 'string',
@@ -25,6 +30,30 @@ export default {
       name: 'imageUrl',
       type: 'string',
       title: 'imageUrl'
+    },{
+      name: 'image2',
+      type: 'image',
+      title: 'image2'
+    },{
+      name: 'image2Url',
+      type: 'string',
+      title: 'image2Url'
+    },{
+      name: 'image3',
+      type: 'image',
+      title: 'image3'
+    },{
+      name: 'image3Url',
+      type: 'string',
+      title: 'image3Url'
+    },{
+      name: 'image4',
+      type: 'image',
+      title: 'image4'
+    },{
+      name: 'image4Url',
+      type: 'string',
+      title: 'image4Url'
     }
   ]
 }

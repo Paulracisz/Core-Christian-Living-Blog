@@ -74,6 +74,46 @@ a,
   transition: 0.4s;
 }
 
+@media only screen and (max-width: 600px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+  }
+  
+  h1,
+  h2 {
+    font-size: 25px !important;
+    text-align: center !important;
+  }
+  
+  .Abo-nav {
+    width: 4em !important;
+    font-size: 25px !important;
+  }
+  
+  a {
+    font-size: 2em !important;
+    text-align: center !important;
+  }
+  
+  #app {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .article-image {
+    width: 10em !important;
+  }
+  
+  img {
+    width: 15em !important;
+  }
+}
+
 
 @media (min-width: 1024px) {
   body {
