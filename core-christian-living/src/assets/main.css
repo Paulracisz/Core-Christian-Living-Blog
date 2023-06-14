@@ -7,6 +7,10 @@ body {
   overflow-x: hidden;
 }
 
+h1 {
+  text-align: center;
+}
+
 h2 {
   text-align: center;
   margin-bottom: 2em;
@@ -21,7 +25,7 @@ p {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  color:#9F9F9F;
+  color: #9F9F9F;
 }
 
 .article-title {
@@ -41,7 +45,10 @@ p {
   display: inline-block;
   color: #9F9F9F;
   padding: 15px;
-  max-width: 500px;
+  min-width: 25em;
+  max-width: 25em;
+  min-height: 25em;
+  max-height: 25em;
   background-color: #313131;
   margin: 10px;
   transition: all 0.3s ease;
@@ -54,16 +61,18 @@ p {
 
 .article-image {
   width: 20em;
+  object-fit: cover;
+  max-height: 15em;
 }
 
 body::-webkit-scrollbar {
   width: 1em;
 }
- 
+
 body::-webkit-scrollbar-track {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
- 
+
 body::-webkit-scrollbar-thumb {
   background-color: darkgrey;
   outline: 1px solid slategrey;
@@ -91,28 +100,37 @@ a,
     align-items: center;
     width: 100vw;
   }
-  
+
   h1,
   h2 {
     font-size: 25px !important;
     text-align: center !important;
   }
-  
+
   .Abo-nav {
     width: 4em !important;
     font-size: 25px !important;
   }
-  
+
   a {
     font-size: 2em !important;
     text-align: center !important;
   }
 
-  
+  #text,
+  #par2,
+  #par3,
+  #par4,
+  #par5,
+  #par6 {
+    margin: 2em;
+    font-size: 1em !important;
+  }
+
   .article-image {
     width: 10em !important;
   }
-  
+
   img {
     width: 15em !important;
   }

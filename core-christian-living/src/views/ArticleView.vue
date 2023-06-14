@@ -127,8 +127,14 @@ p {
     margin: 2em;
   }
   
-  #text {
+  #text,
+  #par2,
+  #par3,
+  #par4,
+  #par5,
+  #par6 {
     margin: 2em;
+    font-size: 2em;
   }
   
   #p-flex {
