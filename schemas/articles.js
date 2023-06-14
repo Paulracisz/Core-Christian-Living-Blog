@@ -22,6 +22,18 @@ export default {
       name: 'Body',
       type: 'string',
       title: 'body'
+    }, {
+      name: 'paragraph2',
+      type: 'string',
+      title: 'paragraph2'
+    },{
+      name: 'paragraph3',
+      type: 'string',
+      title: 'paragraph3'
+    },{
+      name: 'paragraph4',
+      type: 'string',
+      title: 'paragraph4'
     },{
       name: 'image',
       type: 'image',
