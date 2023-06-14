@@ -28,7 +28,7 @@ p {
   font-weight: bold;
   border-bottom: 2px solid #9F9F9F;
   margin-bottom: 10px;
-  
+  word-wrap: break-word;
 }
 
 .title {
@@ -41,6 +41,8 @@ p {
   display: inline-block;
   color: #9F9F9F;
   padding: 15px;
+  max-width: 500px;
+  background-color: #313131;
   margin: 10px;
   transition: all 0.3s ease;
 }
@@ -74,6 +76,14 @@ a,
   transition: 0.4s;
 }
 
+
+#app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 @media only screen and (max-width: 600px) {
   body {
     display: flex;
@@ -97,13 +107,7 @@ a,
     font-size: 2em !important;
     text-align: center !important;
   }
-  
-  #app {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
+
   
   .article-image {
     width: 10em !important;
@@ -121,8 +125,4 @@ a,
     place-items: center;
   }
 
-  #app {
-    display: grid;
-    padding: 0 2rem;
-  }
 }

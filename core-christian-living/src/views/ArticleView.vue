@@ -1,5 +1,7 @@
 <template>
+  <div id="header-flex">
 <h1 id="article-header"></h1>
+  </div>
 <div id="p-flex">
 <p id="date"></p>
 <p id="created-by"></p>
@@ -8,7 +10,9 @@
 <img id="article-thumb" />
 </div>
 <img id="image-2" />
+<div id="text-flex">
 <p id="text"></p>
+</div>
 <img id="image-3" />
 <img id="image-4" />
       <RouterLink id="route" to="/">
@@ -110,6 +114,21 @@ img {
     margin-bottom: 2em;
   }
   
+  #header-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+  }
+  
+  #text-flex {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1000px;
+  }
+  
   #route {
     text-align: center;
     font-size: 2em;
@@ -123,7 +142,7 @@ img {
   }
   
   #article-header {
-    font-size: 5em;
+    font-size: 3em;
   }
   
   #article-flex {
