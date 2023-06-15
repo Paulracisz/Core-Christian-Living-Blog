@@ -2,7 +2,7 @@ import './assets/main.css'
 
 import { createApp } from 'vue'
 import App from './App.vue'
-import  HomeView from './views/HomeView.vue';
+import HomeView from './views/HomeView.vue';
 import ArticleView  from './views/ArticleView.vue';
 import AboutView  from './views/AboutView.vue';
 import router from './router'
