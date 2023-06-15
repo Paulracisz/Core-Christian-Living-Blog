@@ -8,16 +8,20 @@ const router = createRouter({
   routes: [
     {
       path: '/',
+      redirect: { name: 'home' }
+    },
+    {
+      path: '/Core-Christian-Living-Blog/',
       name: 'home',
       component: HomeView
     },
     {
-      path: '/article/:id',
+      path: '/Core-Christian-Living-Blog/article/:id',
       name: 'article',
       component: ArticleView
     },
     {
-      path: '/About',
+      path: '/Core-Christian-Living-Blog/About',
       name: 'about',
       component: About
     }

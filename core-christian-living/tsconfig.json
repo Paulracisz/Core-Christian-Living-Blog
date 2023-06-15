@@ -3,6 +3,7 @@
     "module": "esnext",
     "resolveJsonModule": true,
     "moduleResolution": "node",
+    "allowJs": true,
     "esModuleInterop": true,
     "lib": ["ESNext", "DOM"],
     "types": ["vite/client"],
@@ -14,5 +15,5 @@
       }
     ]
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue"]
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"]
 }
