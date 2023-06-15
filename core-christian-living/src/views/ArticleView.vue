@@ -34,12 +34,14 @@
 <!-- 
 Features to add:
 Daily Bible Verse from Bible Verse API []
-Style articles to break text into different paragraphs according to schema []
 Comment section users can log in with social medias []
-Create About page []
+Create About page for authors []
+Get rid of light and dark mode vars and just use the dark mode scheme []
 add website created by []
+Find way to make the newest articles appear at the top []
 
 Complete:
+Style articles to break text into different paragraphs according to schema [X]
 Clean up date for articles [X]
 MIT License [X]
 style article page [X]

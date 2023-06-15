@@ -5,12 +5,12 @@
       <h1 class="title">Core Christian Living Blog</h1>
     </div>
     <h2>A blog About Christian Family and Living, and Core Christian Principles</h2>
-    <AboutView></AboutView>
     <h1>Articles</h1>
     <div class="article-box" v-for="article in result" :key="article._id">
       <RouterLink :to="`/article/${article._id}`">
         <div class="big-box">
             <h1 class="article-title">{{ article.title }}</h1>
+            <p>By: {{ article.createdBy }}</p>
             <img :src="article.imageUrl" :alt="article.title" class="article-image" />
           </div>
         </RouterLink>
