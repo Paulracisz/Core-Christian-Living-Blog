@@ -12,6 +12,15 @@ const app = createApp(App)
 app.use(router)
 
 
+
+import { initializeApp } from 'firebase/app';
+
+// TODO: Replace the following with your app's Firebase project configuration
+const firebaseConfig = {
+  //...
+};
+
+const app = initializeApp(firebaseConfig);
 // Register components globally
 app.component('HomeView', HomeView);
 app.component('ArticleView', ArticleView);

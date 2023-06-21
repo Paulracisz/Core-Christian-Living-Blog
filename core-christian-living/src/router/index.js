@@ -11,17 +11,17 @@ const router = createRouter({
       redirect: { name: 'home' }
     },
     {
-      path: '/Core-Christian-Living-Blog/',
+      path: '/',
       name: 'home',
       component: HomeView
     },
     {
-      path: '/Core-Christian-Living-Blog/article/:id',
+      path: '/article/:id',
       name: 'article',
       component: ArticleView
     },
     {
-      path: '/Core-Christian-Living-Blog/About',
+      path: '/About',
       name: 'about',
       component: About
     }

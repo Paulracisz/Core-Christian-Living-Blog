@@ -1,6 +1,7 @@
 {
   "name": "christ-and-living",
   "version": "0.0.0",
+  "homepage": "https://paulracisz.github.io/Core-Christian-Living-Blog/",
   "private": true,
   "scripts": {
     "dev": "vite",
@@ -15,6 +16,7 @@
   },
   "dependencies": {
     "axios": "^1.4.0",
+    "firebase": "^9.22.2",
     "vue-router": "^4.2.0"
   },
   "devDependencies": {
