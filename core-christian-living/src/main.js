@@ -5,25 +5,16 @@ import App from './App.vue'
 import HomeView from './views/HomeView.vue';
 import ArticleView  from './views/ArticleView.vue';
 import AboutView  from './views/AboutView.vue';
+import { createRouter, createWebHistory } from 'vue-router';
 import router from './router'
 
-const app = createApp(App)
+createApp(App)
+  .use(router)
+  .mount('#app');
 
-app.use(router)
-
-
-
-import { initializeApp } from 'firebase/app';
-
-// TODO: Replace the following with your app's Firebase project configuration
-const firebaseConfig = {
-  //...
-};
-
-const app = initializeApp(firebaseConfig);
 // Register components globally
-app.component('HomeView', HomeView);
-app.component('ArticleView', ArticleView);
-app.component('AboutView', AboutView);
+App.component('HomeView', HomeView);
+App.component('ArticleView', ArticleView);
+App.component('AboutView', AboutView);
 
-app.mount('#app')
+

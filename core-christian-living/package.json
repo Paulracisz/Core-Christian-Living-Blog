@@ -1,7 +1,7 @@
 {
   "name": "christ-and-living",
   "version": "0.0.0",
-  "homepage": "https://paulracisz.github.io/Core-Christian-Living-Blog/",
+  "homepage": "https://core-christian.web.app",
   "private": true,
   "scripts": {
     "dev": "vite",
