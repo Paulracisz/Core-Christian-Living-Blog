@@ -1,5 +1,8 @@
 <template>
   <div class="rout-box">
+    <RouterLink class="nav-link" id="route" to="/About">
+      About
+    </RouterLink>
     <RouterLink class="nav-link" id="route" to="/prayer-articles">
       Prayers
     </RouterLink>    
@@ -9,7 +12,7 @@
     <RouterLink class="nav-link" id="route" to="/evidence-articles">
       Biblical Evidence
     </RouterLink>
-    <RouterLink class="nav-link" id="route" to="/evidence-articles">
+    <RouterLink class="nav-link" id="route" to="/gospel-playlists">
       Gospel Playlists
     </RouterLink>
   </div>
