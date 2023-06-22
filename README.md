@@ -2,7 +2,7 @@
 This project is a blog featuring topics of Christian living, Christian famililes, and studies and teachings of the scriptures.
 
 ## Deployment
-To view the deployed webpage, click here: (will be deployed soon).
+To view the deployed webpage, click here: https://core-christian.web.app/.
 
 ## Getting Started
 To get started with the blog, follow these steps:
