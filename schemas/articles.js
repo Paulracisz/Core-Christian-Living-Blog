@@ -14,6 +14,11 @@ export default {
     type: 'string',
     title: 'createdby'
   }, 
+  {
+    name: 'Category',
+    type: 'string',
+    title: 'category'
+  }, 
     {
       name: 'title',
       type: 'string',

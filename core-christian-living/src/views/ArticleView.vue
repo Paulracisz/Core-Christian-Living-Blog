@@ -35,6 +35,11 @@
 Features to add:
 Daily Bible Verse from Bible Verse API []
 Comment section users can log in with social medias []
+Split articles into categories []
+Add side tabs to filter by category []
+Gospel playlist tab []
+Categories: Study articles, biblical evidence, gospel playlist []
+Make the text more colorful []
 Create About page for authors []
 Get rid of light and dark mode vars and just use the dark mode scheme []
 add website created by []
@@ -49,6 +54,7 @@ Figure out how to render the article previews on the homepage in a row format (s
 -->
 
 <script>
+import axios from 'axios';
 export default {
   name: 'ArticlePage',
   data() {
@@ -56,6 +62,7 @@ export default {
       article: {},
     };
   },
+  
   created() {
     let currentArticle = {}
     let PROJECT_ID = 'xinvfi3s';

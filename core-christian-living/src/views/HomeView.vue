@@ -5,6 +5,7 @@
       <h1 class="title">Core Christian Living Blog</h1>
     </div>
     <h2>A blog About Christian Family and Living, and Core Christian Principles</h2>
+    <Navi></Navi>
     <h1>Articles</h1>
     <div class="article-box" v-for="article in result" :key="article._id">
       <RouterLink :to="`/article/${article._id}`">
@@ -22,6 +23,7 @@
 import { RouterLink } from 'vue-router';
 import Dailyverse from '../components/Dailyverse.vue';
 import AboutView from './AboutView.vue';
+import Navi from '../components/Navi.vue'
 
 export default {
   data() {
@@ -48,7 +50,8 @@ export default {
       .catch((err) => console.error(err));
   },
   components: {
-    RouterLink
+    RouterLink,
+    Navi
   }
 };
 </script>
