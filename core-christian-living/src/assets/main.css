@@ -36,9 +36,10 @@ p {
 }
 
 .title {
-  font-size: 4em;
+  font-size: 2em;
   font-weight: bold;
-  text-align: center;
+  margin: 20px;
+  text-align: left;
 }
 
 .article-box {
@@ -52,6 +53,14 @@ p {
   background-color: #313131;
   margin: 10px;
   transition: all 0.3s ease;
+}
+
+
+#title-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .article-box:hover {

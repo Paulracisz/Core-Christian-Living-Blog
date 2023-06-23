@@ -42,6 +42,9 @@ See about making potentially a christian radio for the website: https://www.icec
 Search functionality for articles []
 Sign up for email notifications every time a new article is made []
 Page views for articles []
+Find better solution for the daily bible verse []
+make logo for website []
+add article category to the article page []
 Add brighter colors change text style up []
 fix header clipping on iphone []
 Make the text more colorful []
@@ -49,9 +52,9 @@ Fix weird styling for nav bar on smaller screens []
 Create About page for authors []
 Get rid of light and dark mode vars and just use the dark mode scheme []
 add website created by []
-Find way to make the newest articles appear at the top []
 
 Complete:
+Find way to make the newest articles appear at the top [X]
 put dist file back in gitignore [X]
 Split articles into categories [X]
 Categories: Study articles, biblical evidence, gospel playlist [X]
@@ -182,7 +185,7 @@ p {
   
   #route {
     text-align: center;
-    font-size: 2em;
+    font-size: 1.5em;
     transition: 0.3 ease all;
     margin-bottom: 2em;
   }

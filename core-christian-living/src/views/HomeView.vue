@@ -1,12 +1,12 @@
 <template>
   <div>
     <div id="title-box">
-      <div id=""></div>
       <h1 class="title">Core Christian Living Blog</h1>
+      <Navi></Navi>
     </div>
-    <h2>A blog About Christian Family Living, and Core Christian Principles</h2>
-    <Navi></Navi>
-
+<div id="topics-box">
+  <Topics></Topics>
+</div>
     <div class="daily-verse-box">
       <h1>Daily Verse</h1>
       <Dailyverse></Dailyverse>
@@ -28,6 +28,7 @@
 import { RouterLink } from 'vue-router'
 import Dailyverse from '../components/Dailyverse.vue'
 import AboutView from './AboutView.vue'
+import Topics from '../components/Topics.vue'
 import Navi from '../components/Navi.vue'
 
 export default {
@@ -57,7 +58,8 @@ export default {
   components: {
     RouterLink,
     Navi,
-    Dailyverse
+    Dailyverse,
+    Topics
   }
 }
 </script>
