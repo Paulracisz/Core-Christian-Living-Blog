@@ -26,7 +26,7 @@
 <p id="par6"></p>
 <br/>
 </div>
-      <RouterLink id="route" to="/">
+      <RouterLink id="back-home" to="/">
         Back To Home
       </RouterLink>
 </template>
@@ -196,8 +196,15 @@ p {
     transition: 0.3 ease all;
     margin-bottom: 2em;
   }
-  
-  #route:hover {
+
+  #back-home {
+    text-align: center;
+    font-size: 1.5em;
+    transition: 0.3 ease all;
+    margin-bottom: 2em;
+  }
+
+  #back-home:hover {
     text-decoration: underline;
     filter: brightness(50%);
   }

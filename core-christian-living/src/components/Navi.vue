@@ -32,4 +32,8 @@ export default {}
   color: whitesmoke;
 }
 
+.nav-link:hover {
+  color: #308c8d;
+}
+
 </style>

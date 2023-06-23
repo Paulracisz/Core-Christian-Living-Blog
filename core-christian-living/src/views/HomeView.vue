@@ -17,9 +17,9 @@
         <div class="big-box">
           <img :src="article.imageUrl" :alt="article.title" class="article-image" />
           <h1 class="article-title">{{ article.title }}</h1>
-          <div id="p-flex">
+       
           <p id="article-p">By: {{ article.createdBy }}</p>
-          </div>
+    
         </div>
       </RouterLink>
     </div>
