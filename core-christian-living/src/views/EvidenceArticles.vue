@@ -1,5 +1,5 @@
 <template>
-    <h1>Prayer Articles</h1>
+    <h1>Biblical Evidence Articles</h1>
  <div class="article-box" v-for="article in result">
       <RouterLink :to="`/article/${article._id}`" :key="article._id">
         <div class="big-box">
@@ -49,7 +49,7 @@ export default {
   },mounted() {
   let PROJECT_ID = 'xinvfi3s';
   let DATASET = 'production';
-  let QUERY = `*[Category == "prayer"]`;
+  let QUERY = `*[Category == "evidence"]`;
   let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
   fetch(URL)
     .then((res) => res.json())

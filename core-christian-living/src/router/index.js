@@ -3,6 +3,9 @@ import HomeView from '../views/HomeView.vue';
 import ArticleView from '../views/ArticleView.vue';
 import About from '../components/About.vue';
 import PrayerArticles from '../views/PrayerArticles.vue';
+import StudyArticles from '../views/StudyArticles.vue';
+import EvidenceArticles from '../views/EvidenceArticles.vue';
+import GospelPlaylists from '../views/GospelPlaylists.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,6 +23,18 @@ const router = createRouter({
       path: '/prayer-articles',
       name: 'prayer',
       component: PrayerArticles
+    },    {
+      path: '/study-articles',
+      name: 'study',
+      component: StudyArticles
+    },{
+      path: '/evidence-articles',
+      name: 'evidence',
+      component: EvidenceArticles
+    },{
+      path: '/gospel-playlists',
+      name: 'gospel',
+      component: GospelPlaylists
     },
     {
       path: '/article/:id',

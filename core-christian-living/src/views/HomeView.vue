@@ -6,52 +6,59 @@
     </div>
     <h2>A blog About Christian Family and Living, and Core Christian Principles</h2>
     <Navi></Navi>
+
+    <div class="daily-verse-box">
+      <h1>Daily Verse</h1>
+      <Dailyverse></Dailyverse>
+    </div>
     <h1>Articles</h1>
     <div class="article-box" v-for="article in result" :key="article._id">
       <RouterLink :to="`/article/${article._id}`">
         <div class="big-box">
-            <h1 class="article-title">{{ article.title }}</h1>
-            <p>By: {{ article.createdBy }}</p>
-            <img :src="article.imageUrl" :alt="article.title" class="article-image" />
-          </div>
-        </RouterLink>
+          <h1 class="article-title">{{ article.title }}</h1>
+          <p>By: {{ article.createdBy }}</p>
+          <img :src="article.imageUrl" :alt="article.title" class="article-image" />
         </div>
+      </RouterLink>
+    </div>
   </div>
 </template>
 
 <script>
-import { RouterLink } from 'vue-router';
-import Dailyverse from '../components/Dailyverse.vue';
-import AboutView from './AboutView.vue';
+import { RouterLink } from 'vue-router'
+import Dailyverse from '../components/Dailyverse.vue'
+import AboutView from './AboutView.vue'
 import Navi from '../components/Navi.vue'
 
 export default {
   data() {
     return {
       result: null // Initialize result to null
-    };
+    }
   },
   mounted() {
-    let PROJECT_ID = 'xinvfi3s';
-    let DATASET = 'production';
-    let QUERY = encodeURIComponent('*[_type == "article"]');
-    let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
+    let PROJECT_ID = 'xinvfi3s'
+    let DATASET = 'production'
+    let QUERY = encodeURIComponent('*[_type == "article"]')
+    let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`
     fetch(URL)
       .then((res) => res.json())
       .then(({ result }) => {
         this.result = result.map((article) => {
-          const imageUrl = article.imageUrl;
+          const imageUrl = article.imageUrl
           return {
             ...article,
             imageUrl
-          };
-        });
+          }
+        })
       })
-      .catch((err) => console.error(err));
+      .catch((err) => console.error(err))
   },
   components: {
     RouterLink,
-    Navi
+    Navi,
+    Dailyverse
   }
-};
+}
 </script>
+
