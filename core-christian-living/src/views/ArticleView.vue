@@ -37,6 +37,8 @@ Daily Bible Verse from Bible Verse API []
 Comment section users can log in with social medias []
 Split articles into categories []
 Add side tabs to filter by category []
+Possibly add emoji reactions to the articles [] check out: https://github.com/IvanSotelo/VueFeedbackReaction
+Possible add emoji reactions to the daily verse [] check out: https://github.com/IvanSotelo/VueFeedbackReaction
 Gospel playlist tab []
 put dist file back in gitignore []
 Categories: Study articles, biblical evidence, gospel playlist []

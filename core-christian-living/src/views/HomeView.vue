@@ -4,7 +4,7 @@
       <div id=""></div>
       <h1 class="title">Core Christian Living Blog</h1>
     </div>
-    <h2>A blog About Christian Family and Living, and Core Christian Principles</h2>
+    <h2>A blog About Christian Family Living, and Core Christian Principles</h2>
     <Navi></Navi>
 
     <div class="daily-verse-box">
