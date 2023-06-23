@@ -38,6 +38,9 @@ Add side tabs to filter by category []
 Possibly add emoji reactions to the articles [] check out: https://github.com/IvanSotelo/VueFeedbackReaction
 Possible add emoji reactions to the daily verse [] check out: https://github.com/IvanSotelo/VueFeedbackReaction
 Gospel playlist tab []
+See about making potentially a christian radio for the website: https://www.icecast.org/download/ []
+Search functionality for articles []
+Sign up for email notifications every time a new article is made []
 Page views for articles []
 Add brighter colors change text style up []
 fix header clipping on iphone []
