@@ -21,10 +21,8 @@ This project was built using the following technologies:
 * Vite
 * CSS
 * HTML
-* TypeScript
 * Vue Router
 * Sanity IO
-* Axios
 ## Contributing
 If you wish to contribute to this project, please submit a pull request.
 
