@@ -33,15 +33,14 @@
 
 <!-- 
 Features to add:
-Daily Bible Verse from Bible Verse API []
 Comment section users can log in with social medias []
-Split articles into categories []
 Add side tabs to filter by category []
 Possibly add emoji reactions to the articles [] check out: https://github.com/IvanSotelo/VueFeedbackReaction
 Possible add emoji reactions to the daily verse [] check out: https://github.com/IvanSotelo/VueFeedbackReaction
 Gospel playlist tab []
+Add brighter colors change text style up []
+fix header clipping on iphone []
 put dist file back in gitignore []
-Categories: Study articles, biblical evidence, gospel playlist []
 Make the text more colorful []
 Fix weird styling for nav bar on smaller screens []
 Create About page for authors []
@@ -50,6 +49,9 @@ add website created by []
 Find way to make the newest articles appear at the top []
 
 Complete:
+Split articles into categories [X]
+Categories: Study articles, biblical evidence, gospel playlist [X]
+Daily Bible Verse from Bible Verse API [X]
 Style articles to break text into different paragraphs according to schema [X]
 Clean up date for articles [X]
 MIT License [X]
