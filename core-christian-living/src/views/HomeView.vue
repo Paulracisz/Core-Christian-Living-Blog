@@ -4,22 +4,25 @@
       <h1 class="title">Core Christian Living Blog</h1>
       <Navi></Navi>
     </div>
+    <div id="search">
+      <input id="Search-Bar" placeholder="Search">
+    </div>
 <div id="topics-box">
   <Topics></Topics>
 </div>
-    <div class="daily-verse-box">
-      <h1>Daily Verse</h1>
-      <Dailyverse></Dailyverse>
-    </div>
     <h1>Articles</h1>
+    <div class="article-flex">
     <div class="article-box" v-for="article in result" :key="article._id">
       <RouterLink :to="`/article/${article._id}`">
         <div class="big-box">
-          <h1 class="article-title">{{ article.title }}</h1>
-          <p>By: {{ article.createdBy }}</p>
           <img :src="article.imageUrl" :alt="article.title" class="article-image" />
+          <h1 class="article-title">{{ article.title }}</h1>
+          <div id="p-flex">
+          <p id="article-p">By: {{ article.createdBy }}</p>
+          </div>
         </div>
       </RouterLink>
+    </div>
     </div>
   </div>
 </template>

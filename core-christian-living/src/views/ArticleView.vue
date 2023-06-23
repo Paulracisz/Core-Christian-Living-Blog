@@ -139,6 +139,11 @@ p {
   line-height: 150%;
 }
 
+#created-by {
+  
+  color: white;
+}
+
   .about {
     min-height: 100vh;
     display: flex;
@@ -147,6 +152,7 @@ p {
   
   #date {
     margin: 2em;
+    color: white;
   }
   
   #text,
@@ -156,6 +162,7 @@ p {
   #par5,
   #par6 {
     margin: 2em;
+    color: white;
     font-size: 2em;
   }
   

@@ -2,9 +2,9 @@
     <div id="topics-flex">
     <h1 class="">Topics</h1>
     <div id="buttons-flex">
-    <button>All</button>
+    <button id="selected-button">All</button>
     <button>Prayers</button>
-    <button>Bible Studies</button>
+    <button id="studies">Bible Studies</button>
     <button>Biblical Evidence</button>
     </div>
     </div>
@@ -22,17 +22,29 @@
 
 
 button {
-  border: 1px solid black;
   border-radius: 500px;
   padding: 10px;
   margin: 5px;
-  color: black;
+  border: none;
+  color: white;
   text-align: center;
+  transition: 0.2 all ease;
   background-color: #283c49;
 }
 
 button:hover {
+  filter: brightness(50%);
+}
+
+#selected-button {
+  background-color: #5cc6c7;
+}
+
+button:hover {
   cursor: pointer;
+}
+#studies {
+  background-color: #e1718b;
 }
 
 #buttons-flex {
