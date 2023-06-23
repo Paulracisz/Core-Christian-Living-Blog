@@ -38,6 +38,7 @@ Add side tabs to filter by category []
 Possibly add emoji reactions to the articles [] check out: https://github.com/IvanSotelo/VueFeedbackReaction
 Possible add emoji reactions to the daily verse [] check out: https://github.com/IvanSotelo/VueFeedbackReaction
 Gospel playlist tab []
+Page views for articles []
 Add brighter colors change text style up []
 fix header clipping on iphone []
 Make the text more colorful []
