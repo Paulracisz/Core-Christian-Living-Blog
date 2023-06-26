@@ -121,13 +121,14 @@ p {
   display: flex;
   align-items: center;
   padding: 5px;
+  padding-bottom: 0;
   justify-content: center;
   width: 33%;
 }
 
 
 .cati-text  {
-  color: #796f41;
+  color: #d5b00c;
   height: 100%;
 }
 
