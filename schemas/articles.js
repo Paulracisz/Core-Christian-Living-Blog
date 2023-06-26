@@ -19,6 +19,11 @@ export default {
     type: 'string',
     title: 'category'
   }, 
+  {
+    name: 'timeToRead',
+    type: 'string',
+    title: 'timeToRead'
+  },
     {
       name: 'title',
       type: 'string',

@@ -63,7 +63,11 @@ p {
 .article-box {
   display: inline-block;
   color: #9F9F9F;
-  padding: 5px;
+  padding-bottom: 0;
+  padding: 15px;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
   border-radius: 15px;
   display: flex;
   align-items: baseline;
@@ -71,8 +75,8 @@ p {
   justify-content: center;
   min-width: 25em;
   max-width: 25em;
-  min-height: 25em;
-  max-height: 25em;
+  min-height: 30em;
+  max-height: 30em;
   background-color: #10181c;
   margin: 10px;
   transition: all 0.3s ease;
@@ -83,6 +87,48 @@ p {
   align-items: center;
   flex-wrap: wrap;
   justify-content: baseline;
+}
+
+.article-footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-self: flex-end;
+  align-items: center;
+  border: 2px #17242c solid;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  margin: 0;
+  padding-bottom: 5px;
+}
+
+.article-cati,
+.article-created-at {
+  display: flex;
+  align-items: center;
+  height: 2em;
+  border-right: 2px solid #17242c;
+  padding: 5px;
+  padding-bottom: 0;
+  justify-content: center;
+  width: 33%;
+}
+
+
+.article-time-to-read {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  justify-content: center;
+  width: 33%;
+}
+
+
+.cati-text  {
+  color: #796f41;
+  height: 100%;
 }
 
 

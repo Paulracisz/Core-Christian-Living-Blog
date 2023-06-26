@@ -22,6 +22,11 @@
     
         </div>
       </RouterLink>
+      <div class="article-footer">
+        <div class="article-cati"><p class="cati-text">{{ article.Category }}</p></div>
+        <div class="article-created-at"><p class="footer-text">{{ article._createdAt }}</p></div>
+        <div class="article-time-to-read"><p class="footer-text">{{ article.timeToRead }}</p></div>
+      </div>
     </div>
     </div>
   </div>
