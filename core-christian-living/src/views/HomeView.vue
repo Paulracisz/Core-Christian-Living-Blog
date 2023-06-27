@@ -10,7 +10,6 @@
     <div id="topics-box">
       <Topics></Topics>
     </div>
-    <h1>Articles</h1>
     <div class="article-flex">
       <div class="article-box" v-for="article in result" :key="article._id">
         <RouterLink :to="`/article/${article._id}`">
