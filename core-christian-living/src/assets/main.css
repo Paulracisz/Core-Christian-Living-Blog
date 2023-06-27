@@ -116,6 +116,15 @@ p {
   width: 33%;
 }
 
+.ico-img {
+  width: 1.8em;
+}
+
+.footer-text {
+  display: flex;
+  
+}
+
 
 .article-time-to-read {
   display: flex;

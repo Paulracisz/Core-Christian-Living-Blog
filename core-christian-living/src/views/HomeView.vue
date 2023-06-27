@@ -5,29 +5,34 @@
       <Navi></Navi>
     </div>
     <div id="search">
-      <input id="Search-Bar" placeholder="Search">
+      <input id="Search-Bar" placeholder="Search" />
     </div>
-<div id="topics-box">
-  <Topics></Topics>
-</div>
+    <div id="topics-box">
+      <Topics></Topics>
+    </div>
     <h1>Articles</h1>
     <div class="article-flex">
-    <div class="article-box" v-for="article in result" :key="article._id">
-      <RouterLink :to="`/article/${article._id}`">
-        <div class="big-box">
-          <img :src="article.imageUrl" :alt="article.title" class="article-image" />
-          <h1 class="article-title">{{ article.title }}</h1>
-       
-          <p id="article-p">By: {{ article.createdBy }}</p>
-    
+      <div class="article-box" v-for="article in result" :key="article._id">
+        <RouterLink :to="`/article/${article._id}`">
+          <div class="big-box">
+            <img :src="article.imageUrl" :alt="article.title" class="article-image" />
+            <h1 class="article-title">{{ article.title }}</h1>
+
+            <p id="article-p">By: {{ article.createdBy }}</p>
+          </div>
+        </RouterLink>
+        <div class="article-footer">
+          <div class="article-cati">
+            <p class="cati-text">{{ article.Category }}</p>
+          </div>
+          <div class="article-created-at">
+            <p class="footer-text"><img class="ico-img" src='../resources/Capture.PNG' />{{ convertMonth(article._createdAt) }} {{ new Date(article._createdAt).getDate() }} </p>
+          </div>
+          <div class="article-time-to-read">
+            <img class="ico-img" src='../resources/clock.PNG' /><p class="footer-text">{{ article.timeToRead }}</p>
+          </div>
         </div>
-      </RouterLink>
-      <div class="article-footer">
-        <div class="article-cati"><p class="cati-text">{{ article.Category }}</p></div>
-        <div class="article-created-at"><p class="footer-text">{{ article._createdAt }}</p></div>
-        <div class="article-time-to-read"><p class="footer-text">{{ article.timeToRead }}</p></div>
       </div>
-    </div>
     </div>
   </div>
 </template>
@@ -38,6 +43,7 @@ import Dailyverse from '../components/Dailyverse.vue'
 import AboutView from './AboutView.vue'
 import Topics from '../components/Topics.vue'
 import Navi from '../components/Navi.vue'
+import DateIco from '../resources/Capture.PNG'
 
 export default {
   data() {
@@ -63,6 +69,13 @@ export default {
       })
       .catch((err) => console.error(err))
   },
+  methods: {
+    convertMonth(utcString) {
+      const date = new Date(utcString)
+      const monthWord = date.toLocaleString('en-US', { month: 'long' })
+      return monthWord
+    }
+  },
   components: {
     RouterLink,
     Navi,
@@ -71,4 +84,3 @@ export default {
   }
 }
 </script>
-
