@@ -34,6 +34,7 @@
         </div>
       </div>
     </div>
+    <div class="credit-div"><p class="credit-text">Website Created By Paul Racisz © 2023</p></div>
   </div>
 </template>
 

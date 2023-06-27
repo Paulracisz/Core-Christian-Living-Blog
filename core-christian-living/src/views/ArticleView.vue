@@ -22,8 +22,28 @@
 <img id="image-4" />
 <br/>
 <p id="par5"></p>
+<img id="image-5" />
 <br/>
 <p id="par6"></p>
+<img id="image-6" />
+<br/>
+<p id="par7"></p>
+<img id="image-7" />
+<br/>
+<p id="par8"></p>
+<img id="image-8" />
+<br/>
+<p id="par9"></p>
+<img id="image-9" />
+<br/>
+<p id="par10"></p>
+<img id="image-10" />
+<br/>
+<p id="par11"></p>
+<img id="image-11" />
+<br/>
+<p id="par12"></p>
+<img id="image-12" />
 <br/>
 </div>
       <RouterLink id="back-home" to="/">
@@ -44,13 +64,13 @@ Sign up for email notifications every time a new article is made []
 Page views for articles []
 Find better solution for the daily bible verse []
 make logo for website []
-Add 12 paragraphs in total []
-Add up to 12 images in total []
 add article category to the article page []
 Create About page for authors []
-add website created by []
 
 Complete:
+add website created by [X]
+Add 12 paragraphs in total [X]
+Add up to 12 images in total [X]
 fix header clipping on iphone [X]
 Add brighter colors change text style up [X]
 Make the text more colorful [X]
@@ -101,7 +121,13 @@ export default {
             let par3 = document.getElementById("par3")
             let par4 = document.getElementById("par4")
             let par5 = document.getElementById("par5")
-            let par6 = document.getElementById("par6")
+            let par6 = document.getElementById("par6") 
+            let par7 = document.getElementById("par7")
+            let par8 = document.getElementById("par8")
+            let par9 = document.getElementById("par9")
+            let par10 = document.getElementById("par10")
+            let par11 = document.getElementById("par11")
+            let par12 = document.getElementById("par12")
             image.src = currentArticle.imageUrl
             date.textContent = `${formattedDate.toGMTString()}`
             createdBy.textContent = `Created By: ${currentArticle.createdBy}`
@@ -111,6 +137,12 @@ export default {
             par4.textContent = currentArticle.paragraph4
             par5.textContent = currentArticle.paragraph5
             par6.textContent = currentArticle.paragraph6
+            par7.textContent = currentArticle.paragraph7
+            par8.textContent = currentArticle.paragraph8
+            par9.textContent = currentArticle.paragraph9
+            par10.textContent = currentArticle.paragraph10
+            par11.textContent = currentArticle.paragraph11
+            par12.textContent = currentArticle.paragraph12
             h1.textContent = currentArticle.title
             if (currentArticle.image2) {
               let image2 = document.getElementById("image-2")
@@ -123,6 +155,38 @@ export default {
             if (currentArticle.image4) {
               let image4 = document.getElementById("image-4")
               image4.src = currentArticle.image4Url
+            }
+            if (currentArticle.image5) {
+              let image5 = document.getElementById("image-5")
+              image5.src = currentArticle.image5Url
+            }
+            if (currentArticle.image6) {
+              let image6 = document.getElementById("image-6")
+              image6.src = currentArticle.image6Url
+            }
+            if (currentArticle.image7) {
+              let image7 = document.getElementById("image-7")
+              image7.src = currentArticle.image7Url
+            }
+            if (currentArticle.image8) {
+              let image8 = document.getElementById("image-8")
+              image8.src = currentArticle.image8Url
+            }
+            if (currentArticle.image9) {
+              let image9 = document.getElementById("image-9")
+              image9.src = currentArticle.image9Url
+            }
+            if (currentArticle.image10) {
+              let image10 = document.getElementById("image-10")
+              image10.src = currentArticle.image10Url
+            }
+            if (currentArticle.image11) {
+              let image11 = document.getElementById("image-11")
+              image11.src = currentArticle.image11Url
+            }
+            if (currentArticle.image12) {
+              let image12 = document.getElementById("image-12")
+              image12.src = currentArticle.image12Url
             }
           }
         });
@@ -202,6 +266,7 @@ p {
   #back-home {
     text-align: center;
     font-size: 1.5em;
+    color: #d5b00c;
     transition: 0.3 ease all;
     margin-bottom: 2em;
   }

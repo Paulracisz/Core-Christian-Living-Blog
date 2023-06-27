@@ -53,6 +53,30 @@ export default {
       type: 'string',
       title: 'paragraph6'
     },{
+      name: 'paragraph7',
+      type: 'string',
+      title: 'paragraph7'
+    },{
+      name: 'paragraph8',
+      type: 'string',
+      title: 'paragraph8'
+    },{
+      name: 'paragraph9',
+      type: 'string',
+      title: 'paragraph9'
+    }, {
+      name: 'paragraph10',
+      type: 'string',
+      title: 'paragraph10'
+    },{
+      name: 'paragraph11',
+      type: 'string',
+      title: 'paragraph11'
+    },{
+      name: 'paragraph12',
+      type: 'string',
+      title: 'paragraph12'
+    },{
       name: 'image',
       type: 'image',
       title: 'image'
@@ -84,6 +108,70 @@ export default {
       name: 'image4Url',
       type: 'string',
       title: 'image4Url'
+    },{
+      name: 'image5',
+      type: 'image',
+      title: 'image5'
+    },{
+      name: 'image5Url',
+      type: 'string',
+      title: 'image5Url'
+    },{
+      name: 'image6',
+      type: 'image',
+      title: 'image5'
+    },{
+      name: 'image6Url',
+      type: 'string',
+      title: 'image6Url'
+    },{
+      name: 'image7',
+      type: 'image',
+      title: 'image7'
+    },{
+      name: 'image7Url',
+      type: 'string',
+      title: 'image7Url'
+    },{
+      name: 'image8',
+      type: 'image',
+      title: 'image8'
+    },{
+      name: 'image8Url',
+      type: 'string',
+      title: 'image8Url'
+    },{
+      name: 'image9',
+      type: 'image',
+      title: 'image9'
+    },{
+      name: 'image9Url',
+      type: 'string',
+      title: 'image9Url'
+    },{
+      name: 'image10',
+      type: 'image',
+      title: 'image10'
+    },{
+      name: 'image10Url',
+      type: 'string',
+      title: 'image10Url'
+    },{
+      name: 'image11',
+      type: 'image',
+      title: 'image11'
+    },{
+      name: 'image11Url',
+      type: 'string',
+      title: 'image11Url'
+    },{
+      name: 'image12',
+      type: 'image',
+      title: 'image12'
+    },{
+      name: 'image12Url',
+      type: 'string',
+      title: 'image12Url'
     }
   ]
 }

@@ -33,7 +33,7 @@ export default {}
 }
 
 .nav-link:hover {
-  color: #308c8d;
+  color: #d5b00c;
 }
 
 </style>

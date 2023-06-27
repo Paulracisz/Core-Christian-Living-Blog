@@ -141,6 +141,22 @@ p {
   height: 100%;
 }
 
+.credit-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  margin-left: 0;
+  margin-bottom: 0;
+  width: 100%;
+  background-color: #10181c;
+  height: 5em;
+}
+
+
+.credit-text {
+  color: white;
+}
 
 #title-box {
   display: flex;
@@ -277,6 +293,10 @@ a,
 
   img {
     width: 15em !important;
+  }
+  
+  .ico-img {
+    width: 1.8em !important;
   }
 }
 
