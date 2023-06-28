@@ -58,14 +58,19 @@ Add side tabs to filter by category []
 Possibly add emoji reactions to the articles [] check out: https://github.com/IvanSotelo/VueFeedbackReaction
 Possible add emoji reactions to the daily verse [] check out: https://github.com/IvanSotelo/VueFeedbackReaction
 Gospel playlist tab []
+Possibly add youtube embedded playlists in Gospel playlist tab []
 See about making potentially a christian radio for the website: https://www.icecast.org/download/ []
 Search functionality for articles []
 Sign up for email notifications every time a new article is made []
 Page views for articles []
 Find better solution for the daily bible verse []
 make logo for website []
+Change theme to avoid copyright infringement []
 add article category to the article page []
 Create About page for authors []
+
+Refactors:
+
 
 Complete:
 add website created by [X]

@@ -28,7 +28,7 @@
             <p class="footer-text"><img class="ico-img" src='../resources/Capture.PNG' />{{ convertMonth(article._createdAt) }} {{ new Date(article._createdAt).getDate() }} </p>
           </div>
           <div class="article-time-to-read">
-            <img class="ico-img" src='../resources/clock.PNG' /><p class="footer-text">{{ article.timeToRead }}</p>
+            <p class="footer-text"><img class="ico-img" src='../resources/clock.PNG' />{{ article.timeToRead }}</p>
           </div>
         </div>
       </div>
