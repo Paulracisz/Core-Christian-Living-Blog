@@ -63,6 +63,7 @@ See about making potentially a christian radio for the website: https://www.icec
 Search functionality for articles []
 Sign up for email notifications every time a new article is made []
 Page views for articles []
+update the nav bar for mobile []
 Find better solution for the daily bible verse []
 make logo for website []
 Change theme to avoid copyright infringement []

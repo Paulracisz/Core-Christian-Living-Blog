@@ -1,5 +1,9 @@
 @import './base.css';
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -138,6 +142,14 @@ p {
 .cati-text  {
   color: #d5b00c;
   height: 50%;
+}
+
+.home-back {
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+  align-items: center;
+  text-align: center;
 }
 
 .credit-div {

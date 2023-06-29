@@ -48,6 +48,15 @@ export default {
   
   <style>
   
+  
+@media only screen and (max-width: 600px) {
+ .hero-text {
+  -webkit-text-stroke-width: 0px !important;
+    -webkit-text-stroke-color: black;
+  background-color: rgba(0, 0, 0, 0.508);
+ } 
+}
+  
   .about-back {
     margin: 15px;
   }
