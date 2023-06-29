@@ -19,17 +19,17 @@
     <div class="author-flex">
       <h2 class="meet">Meet The Authors</h2>
       <div class="profile-flex">
-        <img class="profile" src="../resources/profilepicblue.png"/>
+        <img class="profile" src="../resources/paul.png"/>
         <h2 class="names">Paul Racisz </h2>
       </div>
-      <p class="info">Paul is a software engineer, admin, and builder of the site. He gave his life to Christ in 2019 and has since learned a lot about what it means to be a christian, what it means to be a man, a husband, and a father. He is non-denominational, and believes that we should look towards the scriptures for any beliefs that we have regarding spirtual matters. His wife is Destoni.</p>
+      <p class="info">Paul is a software engineer, admin, and builder of the site. He has a passion for using new technology to improve the lives of those around him. He gave his life to Christ in 2019 and has since learned a lot about what it means to be a christian, what it means to be a man, a husband, and a father. He is non-denominational, and believes that we should look towards the scriptures for any beliefs that we have regarding spirtual matters. His wife is Destoni.</p>
     </div>
     <div class="author-flex">
       <div class="profile-flex">
-        <img class="profile" src="../resources/profilepicblue.png"/>
+        <img class="profile" src="../resources/destoni.jpg"/>
         <h2 class="names">Destoni Racisz </h2>
       </div>
-      <p class="info">Paul is a software engineer, admin, and builder of the site. He gave his life to Christ in 2019 and has since learned a lot about what it means to be a christian, what it means to be a man, a husband, and a father. He is non-denominational, and believes that we should look towards the scriptures for any beliefs that we have regarding spirtual matters. Her husband is Paul.</p>
+      <p class="info">Destoni is a loving mother and wife. She grew up in the church and has extensive knowledge of scriptures and teachings of the bible. She is a nursing assistant that has a passion for helping people who are sick or need patient care. Her husband is Paul.</p>
     </div>
       <RouterLink id="back-home" class="about-back" to="/">
         Back To Home
@@ -62,6 +62,9 @@ export default {
   
   .profile {
     width: 15em;
+    max-width: 15em;
+    max-height: 15em;
+    object-fit: cover;
     margin: 15px;
     border: 2px solid white;
     border-radius: 50%;

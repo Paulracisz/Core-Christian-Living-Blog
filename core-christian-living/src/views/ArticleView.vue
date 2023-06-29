@@ -67,12 +67,12 @@ Find better solution for the daily bible verse []
 make logo for website []
 Change theme to avoid copyright infringement []
 add article category to the article page []
-Create About page for authors []
 
 Refactors:
 
 
 Complete:
+Create About page for authors [X]
 add website created by [X]
 Add 12 paragraphs in total [X]
 Add up to 12 images in total [X]
