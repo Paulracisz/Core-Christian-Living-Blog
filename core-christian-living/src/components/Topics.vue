@@ -2,13 +2,17 @@
     <div id="topics-flex">
     <h1 class="">Topics</h1>
     <div id="buttons-flex">
-    <button id="selected-button">All</button>
-    <button>Prayers</button>
-    <button id="studies">Bible Studies</button>
-    <button>Biblical Evidence</button>
+    <button id="selected-button"><RouterLink id="nav-text" to="/">All</RouterLink></button>
+    <button><RouterLink id="nav-text" to="/prayer-articles">Prayers</RouterLink></button>
+    <button id="studies"><RouterLink id="nav-text" to="/study-articles">Bible Studies</RouterLink></button>
+    <button><RouterLink id="nav-text" to="/evidence-articles">Evidence</RouterLink></button>
     </div>
     </div>
 </template>
+
+<script>
+import { RouterLink } from 'vue-router'
+</script>
 
 <style>
 
@@ -20,6 +24,9 @@
     margin: 20px;
 }
 
+#nav-text {
+  color: white;
+}
 
 button {
   border-radius: 500px;

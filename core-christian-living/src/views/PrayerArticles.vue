@@ -1,44 +1,49 @@
 <template>
-    <h1>Prayer Articles</h1>
- <div class="article-box" v-for="article in result">
-      <RouterLink :to="`/article/${article._id}`" :key="article._id">
-        <div class="big-box">
-            <h1 class="article-title">{{ article.title }}</h1>
-            <p>By: {{ article.createdBy }}</p>
+  <div id="study-flexbox">
+    <div id="title-box">
+      <h1 class="title">Core Christian Living Blog</h1>
+      <Navi></Navi>
+    </div>
+    <div id="search">
+      <input id="Search-Bar" placeholder="Search" />
+    </div>
+    <div id="topics-box">
+      <Topics></Topics>
+    </div>
+    <div class="article-flex">
+      <div class="article-box" v-for="article in result" :key="article._id">
+        <RouterLink :to="`/article/${article._id}`">
+          <div class="big-box">
             <img :src="article.imageUrl" :alt="article.title" class="article-image" />
+            <h1 class="article-title">{{ article.title }}</h1>
+
+            <p id="article-p">By: {{ article.createdBy }}</p>
           </div>
         </RouterLink>
+        <div class="article-footer">
+          <div class="article-cati">
+            <p class="cati-text">{{ article.Category }}</p>
+          </div>
+          <div class="article-created-at">
+            <p class="footer-text"><img class="ico-img" src='../resources/Capture.PNG' />{{ convertMonth(article._createdAt) }} {{ new Date(article._createdAt).getDate() }} </p>
+          </div>
+          <div class="article-time-to-read">
+            <p class="footer-text"><img class="ico-img" src='../resources/clock.PNG' />{{ article.timeToRead }}</p>
+          </div>
         </div>
-        <RouterLink id="back-home" to="/">
-          Back To Home
-        </RouterLink>
-  </template>
-  
-  <!-- 
-  Features to add:
-  Daily Bible Verse from Bible Verse API []
-  Comment section users can log in with social medias []
-  Split articles into categories []
-  Add side tabs to filter by category []
-  Gospel playlist tab []
-  Categories: Study articles, biblical evidence, gospel playlist []
-  Make the text more colorful []
-  Create About page for authors []
-  Get rid of light and dark mode vars and just use the dark mode scheme []
-  add website created by []
-  Find way to make the newest articles appear at the top []
-  
-  Complete:
-  Style articles to break text into different paragraphs according to schema [X]
-  Clean up date for articles [X]
-  MIT License [X]
-  style article page [X]
-  Figure out how to render the article previews on the homepage in a row format (side by side) [X]
-  -->
+      </div>
+    </div>
+    <a id="back-home" href="#top" class="home-back" to="/">
+        Back To The Top
+    </a>
+    <div class="credit-div"><p class="credit-text">Website Created By Paul Racisz © 2023</p></div>
+  </div>
+</template>
   
   <script>
 import { RouterLink } from 'vue-router';
 import Dailyverse from '../components/Dailyverse.vue';
+import Topics from '../components/Topics.vue'
 import AboutView from './AboutView.vue';
 
 export default {
@@ -49,7 +54,7 @@ export default {
   },mounted() {
   let PROJECT_ID = 'xinvfi3s';
   let DATASET = 'production';
-  let QUERY = `*[Category == "prayer"]`;
+  let QUERY = `*[Category == "Prayer"]`;
   let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
   fetch(URL)
     .then((res) => res.json())
@@ -65,9 +70,24 @@ export default {
     })
     .catch((err) => console.error(err));
 },
+  methods: {
+    convertMonth(utcString) {
+      const date = new Date(utcString)
+      const monthWord = date.toLocaleString('en-US', { month: 'long' })
+      return monthWord
+    }
+  },
   components: {
-    RouterLink
+    RouterLink,
+    Topics
   }
 };
 </script>
+
+
+<style>
+#study-flexbox {
+  width: 100vw;
+}
+</style>
   
