@@ -2,10 +2,10 @@
     <div id="topics-flex">
     <h1 class="">Topics</h1>
     <div id="buttons-flex">
-    <button id="selected-button"><RouterLink id="nav-text" to="/">All</RouterLink></button>
-    <button><RouterLink id="nav-text" to="/prayer-articles">Prayers</RouterLink></button>
-    <button id="studies"><RouterLink id="nav-text" to="/study-articles">Bible Studies</RouterLink></button>
-    <button><RouterLink id="nav-text" to="/evidence-articles">Evidence</RouterLink></button>
+    <RouterLink id="nav-text" to="/"><button id="selected-button">All</button></RouterLink>
+    <RouterLink id="nav-text" to="/prayer-articles"><button>Prayers</button></RouterLink>
+    <RouterLink id="nav-text" to="/study-articles"><button id="studies">Bible Studies</button></RouterLink>
+    <RouterLink id="nav-text" to="/evidence-articles"><button>Evidence</button></RouterLink>
     </div>
     </div>
 </template>
