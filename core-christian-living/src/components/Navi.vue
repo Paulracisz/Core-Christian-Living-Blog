@@ -1,13 +1,16 @@
 <template>
   <div class="rout-box">
-    <RouterLink class="nav-link" id="route" to="/">
+    <RouterLink class="nav-link route" to="/">
       Home
     </RouterLink>
-    <RouterLink class="nav-link" id="route" to="/About">
+    <RouterLink class="nav-link route" to="/About">
       About
     </RouterLink>
-    <RouterLink class="nav-link" id="route" to="/gospel-playlists">
+    <RouterLink class="nav-link route" to="/gospel-playlists">
       Gospel Playlists
+    </RouterLink>
+    <RouterLink class="nav-link route" to="/bible-evidence">
+      Bible Evidence
     </RouterLink>
   </div>
 </template>
@@ -33,7 +36,7 @@ export default {}
 }
 
 .nav-link:hover {
-  color: #d5b00c;
+  color: #FFD60A;
 }
 
 </style>

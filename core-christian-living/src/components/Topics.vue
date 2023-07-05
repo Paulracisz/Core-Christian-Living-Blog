@@ -2,10 +2,10 @@
     <div id="topics-flex">
     <h1 class="">Topics</h1>
     <div id="buttons-flex">
-    <RouterLink id="nav-text" to="/"><button id="selected-button">All</button></RouterLink>
-    <RouterLink id="nav-text" to="/prayer-articles"><button>Prayers</button></RouterLink>
-    <RouterLink id="nav-text" to="/study-articles"><button id="studies">Bible Studies</button></RouterLink>
-    <RouterLink id="nav-text" to="/evidence-articles"><button>Evidence</button></RouterLink>
+    <RouterLink class="nav-text" to="/"><button id="selected-button">All</button></RouterLink>
+    <RouterLink class="nav-text" to="/prayer-articles"><button>Prayers</button></RouterLink>
+    <RouterLink class="nav-text" to="/study-articles"><button id="studies">Bible Studies</button></RouterLink>
+    <RouterLink class="nav-text" to="/evidence-articles"><button>Evidence</button></RouterLink>
     </div>
     </div>
 </template>
@@ -24,7 +24,7 @@ import { RouterLink } from 'vue-router'
     margin: 20px;
 }
 
-#nav-text {
+.nav-text {
   color: white;
 }
 
@@ -36,7 +36,7 @@ button {
   color: white;
   text-align: center;
   transition: 0.2 all ease;
-  background-color: #283c49;
+  background-color: #33415c;
 }
 
 button:hover {
@@ -44,14 +44,12 @@ button:hover {
 }
 
 #selected-button {
-  background-color: #5cc6c7;
+  background-color: #FFD60A;
+  color: black;
 }
 
 button:hover {
   cursor: pointer;
-}
-#studies {
-  background-color: #e1718b;
 }
 
 #buttons-flex {

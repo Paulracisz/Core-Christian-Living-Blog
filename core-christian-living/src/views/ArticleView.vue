@@ -65,12 +65,12 @@ update the nav bar for mobile []
 Find better solution for the daily bible verse []
 make logo for website []
 Change theme to avoid copyright infringement []
-add article category to the article page []
 
 Refactors:
 
 
 Complete:
+add article category to the article page [X]
 Add side tabs to filter by category [X]
 Page views for articles [X]
 Create About page for authors [X]
@@ -233,9 +233,11 @@ p {
   #par4,
   #par5,
   #par6 {
-    margin: 2em;
+    margin: 1em;
     color: white;
-    font-size: 2em;
+    font-size: 17px;
+    line-height: 26px;
+    border-radius: 10px;
   }
   
   #p-flex {
@@ -262,7 +264,7 @@ p {
     max-width: 1000px;
   }
   
-  #route {
+  .route {
     text-align: center;
     font-size: 1.5em;
     transition: 0.3 ease all;
@@ -272,7 +274,7 @@ p {
   #back-home {
     text-align: center;
     font-size: 1.5em;
-    color: #d5b00c;
+    color: #FFD60A;
     transition: 0.3 ease all;
     margin-bottom: 2em;
   }

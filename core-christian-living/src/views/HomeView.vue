@@ -17,7 +17,7 @@
             <img :src="article.imageUrl" :alt="article.title" class="article-image" />
             <h1 class="article-title">{{ article.title }}</h1>
 
-            <p id="article-p">By: {{ article.createdBy }}</p>
+            <p class="article-p">By: {{ article.createdBy }}</p>
           </div>
         </RouterLink>
         <div class="article-footer">
@@ -25,10 +25,10 @@
             <p class="cati-text">{{ article.Category }}</p>
           </div>
           <div class="article-created-at">
-            <p class="footer-text"><img class="ico-img" src='../resources/Capture.PNG' />{{ convertMonth(article._createdAt) }} {{ new Date(article._createdAt).getDate() }} </p>
+            <p class="footer-text">📅 {{ convertMonth(article._createdAt) }} {{ new Date(article._createdAt).getDate() }} </p>
           </div>
           <div class="article-time-to-read">
-            <p class="footer-text"><img class="ico-img" src='../resources/clock.PNG' />{{ article.timeToRead }}</p>
+            <p class="footer-text">🕒 {{ article.timeToRead }}</p>
           </div>
         </div>
       </div>

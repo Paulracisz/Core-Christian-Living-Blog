@@ -8,7 +8,15 @@
       <input id="Search-Bar" placeholder="Search" />
     </div>
     <div id="topics-box">
-      <Topics></Topics>
+      <div id="topics-flex">
+    <h1 class="">Topics</h1>
+    <div id="buttons-flex">
+    <RouterLink class="nav-text" to="/"><button>All</button></RouterLink>
+    <RouterLink class="nav-text" to="/prayer-articles"><button>Prayers</button></RouterLink>
+    <RouterLink class="nav-text" to="/study-articles"><button>Bible Studies</button></RouterLink>
+    <RouterLink class="nav-text" to="/evidence-articles"><button id="selected-button">Evidence</button></RouterLink>
+    </div>
+    </div>
     </div>
     <div class="article-flex">
       <div class="article-box" v-for="article in result" :key="article._id">
@@ -17,7 +25,7 @@
             <img :src="article.imageUrl" :alt="article.title" class="article-image" />
             <h1 class="article-title">{{ article.title }}</h1>
 
-            <p id="article-p">By: {{ article.createdBy }}</p>
+            <p class="article-p">By: {{ article.createdBy }}</p>
           </div>
         </RouterLink>
         <div class="article-footer">
@@ -25,10 +33,10 @@
             <p class="cati-text">{{ article.Category }}</p>
           </div>
           <div class="article-created-at">
-            <p class="footer-text"><img class="ico-img" src='../resources/Capture.PNG' />{{ convertMonth(article._createdAt) }} {{ new Date(article._createdAt).getDate() }} </p>
+            <p class="footer-text">📅 {{ convertMonth(article._createdAt) }} {{ new Date(article._createdAt).getDate() }} </p>
           </div>
           <div class="article-time-to-read">
-            <p class="footer-text"><img class="ico-img" src='../resources/clock.PNG' />{{ article.timeToRead }}</p>
+            <p class="footer-text">🕒 {{ article.timeToRead }}</p>
           </div>
         </div>
       </div>
