@@ -6,6 +6,7 @@ import PrayerArticles from '../views/PrayerArticles.vue';
 import StudyArticles from '../views/StudyArticles.vue';
 import EvidenceArticles from '../views/EvidenceArticles.vue';
 import GospelPlaylists from '../views/GospelPlaylists.vue';
+import BibleEvidence from '../views/BibleEvidence.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -19,6 +20,11 @@ const router = createRouter({
       name: 'home',
       component: HomeView
     },    
+    {
+      path: '/bible-evidence',
+      name: 'bible-evidence',
+      component: BibleEvidence
+    },
     {
       path: '/prayer-articles',
       name: 'prayer',

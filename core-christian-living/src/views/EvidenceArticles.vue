@@ -52,6 +52,7 @@
 import { RouterLink } from 'vue-router';
 import Dailyverse from '../components/Dailyverse.vue';
 import Topics from '../components/Topics.vue'
+import Navi from '../components/Navi.vue'
 import AboutView from './AboutView.vue';
 
 export default {
@@ -87,7 +88,8 @@ export default {
   },
   components: {
     RouterLink,
-    Topics
+    Topics,
+    Navi
   }
 };
 </script>
