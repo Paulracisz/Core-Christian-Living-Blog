@@ -1,5 +1,5 @@
 <template>
-    <div id="big-boi">
+    <div id="large-box">
       <div id="title-box">
       <h1 class="title">Core Christian Living Blog</h1>
       <Navi></Navi>
@@ -55,6 +55,7 @@ Ephesians 6:12-20<br/>
 Isaiah 59:17<br/>
 Isaiah 61:10-11<br/>
 Ephesians <br/>
+<br/><br/>
 When dealing with negative mindset<br/>
 James 4:7<br/>
 <br/><br/>
@@ -842,12 +843,9 @@ God will turn you to yourself <br/>
     align-items: center;
   }
   
-  #big-boi {
-    padding:10px;
-  }
-  
-  .credit-div {
+  #large-box {
     width: 100vw;
   }
+  
   </style>
   
