@@ -61,7 +61,7 @@ Possibly add youtube embedded playlists in Gospel playlist tab []
 See about making potentially a christian radio for the website: https://www.icecast.org/download/ []
 Sign up for email notifications every time a new article is made []
 Find better solution for the daily bible verse []
-make logo for website []
+Make logo for website []
 Sort BibleEvidence text, create section tags for easy navigation []
 
 Refactors:
@@ -71,6 +71,7 @@ instead of using identicial pages, just use one component and render it dynamica
 remove unused files []
 add comments explaining the code []
 sort imports []
+refactor all dry code []
 remove all unused imports []
 
 Complete:
