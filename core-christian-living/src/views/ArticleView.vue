@@ -59,17 +59,24 @@ Possible add emoji reactions to the daily verse [] check out: https://github.com
 Gospel playlist tab []
 Possibly add youtube embedded playlists in Gospel playlist tab []
 See about making potentially a christian radio for the website: https://www.icecast.org/download/ []
-Search functionality for articles []
 Sign up for email notifications every time a new article is made []
-update the nav bar for mobile []
 Find better solution for the daily bible verse []
 make logo for website []
-Change theme to avoid copyright infringement []
+Sort BibleEvidence text, create section tags for easy navigation []
 
 Refactors:
-
+Make one function to call the sanity api, and use a param to specify what the query is []
+format all files []
+instead of using identicial pages, just use one component and render it dynamically based on filter tabs []
+remove unused files []
+add comments explaining the code []
+sort imports []
+remove all unused imports []
 
 Complete:
+Search functionality for articles [X]
+update the nav bar for mobile [X]
+Change theme to avoid copyright infringement [X]
 add article category to the article page [X]
 Add side tabs to filter by category [X]
 Page views for articles [X]
@@ -95,7 +102,6 @@ Figure out how to render the article previews on the homepage in a row format (s
 -->
 
 <script>
-import axios from 'axios';
 export default {
   name: 'ArticlePage',
   data() {
