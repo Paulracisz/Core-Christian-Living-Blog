@@ -54,6 +54,7 @@
 <!-- 
 Features to add:
 Comment section users can log in with social medias []
+Add search bar in Bible Evidence page []
 Possibly add emoji reactions to the articles [] check out: https://github.com/IvanSotelo/VueFeedbackReaction
 Possible add emoji reactions to the daily verse [] check out: https://github.com/IvanSotelo/VueFeedbackReaction
 Gospel playlist tab []
