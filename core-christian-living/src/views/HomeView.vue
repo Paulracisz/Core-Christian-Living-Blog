@@ -156,11 +156,12 @@ export default {
   },
   
   sortByTopicAPICall(topic) {
-    
   const prayerButton = document.getElementById("prayer-button")
   const studyButton = document.getElementById("study-button")
   const evidenceButton = document.getElementById("evidence-button")
   const allButton = document.getElementById("all-button")
+  let h1 = document.getElementById("not-found")
+  h1.textContent = " "
     switch (topic) {
       case "Prayer":
         prayerButton.classList.add("selected-button")
