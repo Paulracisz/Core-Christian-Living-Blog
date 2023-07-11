@@ -799,8 +799,6 @@
 <script>
 import { RouterLink } from 'vue-router'
 import Dailyverse from '../components/Dailyverse.vue'
-import AboutView from './AboutView.vue'
-import Topics from '../components/Topics.vue'
 import Navi from '../components/Navi.vue'
 import DateIco from '../resources/Capture.PNG'
 
@@ -813,8 +811,7 @@ export default {
   components: {
     RouterLink,
     Navi,
-    Dailyverse,
-    Topics
+    Dailyverse
   }
 }
 </script>

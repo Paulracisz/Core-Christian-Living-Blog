@@ -284,6 +284,49 @@ a,
     width: 10em !important;
     height: 5em !important;
   }
+  
+  #topics-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: baseline;    
+    margin: 20px;
+}
+
+.nav-text {
+  color: white;
+}
+
+button {
+  border-radius: 500px;
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  color: white;
+  text-align: center;
+  transition: 0.2 all ease;
+  background-color: #33415c;
+}
+
+button:hover {
+  filter: brightness(50%);
+}
+
+.selected-button {
+  background-color: #FFD60A !important;
+  color: black;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+#buttons-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;   
+}
 
   .article-p {
     font-size: 16px !important;

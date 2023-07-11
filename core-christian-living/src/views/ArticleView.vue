@@ -65,9 +65,7 @@ Make logo for website []
 Sort BibleEvidence text, create section tags for easy navigation []
 
 Refactors:
-Make one function to call the sanity api, and use a param to specify what the query is []
 format all files []
-instead of using identicial pages, just use one component and render it dynamically based on filter tabs []
 remove unused files []
 add comments explaining the code []
 sort imports []
@@ -75,6 +73,9 @@ refactor all dry code []
 remove all unused imports []
 
 Complete:
+Make the search bar work on every page [X]
+instead of using identicial pages, just use one component and render it dynamically based on filter tabs [X]
+Make one function to call the sanity api, and use a param to specify what the query is [X]
 Search functionality for articles [X]
 update the nav bar for mobile [X]
 Change theme to avoid copyright infringement [X]

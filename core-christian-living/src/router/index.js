@@ -2,9 +2,6 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue';
 import ArticleView from '../views/ArticleView.vue';
 import About from '../components/About.vue';
-import PrayerArticles from '../views/PrayerArticles.vue';
-import StudyArticles from '../views/StudyArticles.vue';
-import EvidenceArticles from '../views/EvidenceArticles.vue';
 import GospelPlaylists from '../views/GospelPlaylists.vue';
 import BibleEvidence from '../views/BibleEvidence.vue';
 
@@ -24,19 +21,6 @@ const router = createRouter({
       path: '/bible-evidence',
       name: 'bible-evidence',
       component: BibleEvidence
-    },
-    {
-      path: '/prayer-articles',
-      name: 'prayer',
-      component: PrayerArticles
-    },    {
-      path: '/study-articles',
-      name: 'study',
-      component: StudyArticles
-    },{
-      path: '/evidence-articles',
-      name: 'evidence',
-      component: EvidenceArticles
     },{
       path: '/gospel-playlists',
       name: 'gospel',
