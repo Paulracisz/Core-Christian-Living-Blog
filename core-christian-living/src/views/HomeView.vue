@@ -9,14 +9,14 @@
     </div>
     <div id="topics-box">
       <div id="topics-flex">
-    <h1 class="">Topics</h1>
-    <div id="buttons-flex">
-    <button id="all-button" class="selected-button" v-on:click="normalAPICall()">All</button>
-    <button  id="prayer-button" v-on:click="sortByTopicAPICall('Prayer')">Prayers</button>
-    <button id="study-button" v-on:click="sortByTopicAPICall('Study')">Bible Studies</button>
-    <button id="evidence-button" v-on:click="sortByTopicAPICall('Evidence')">Evidence</button>
-    </div>
-    </div>
+        <h1 class="">Topics</h1>
+        <div id="buttons-flex">
+          <button id="all-button" class="selected-button" v-on:click="normalAPICall()">All</button>
+          <button id="prayer-button" v-on:click="sortByTopicAPICall('Prayer')">Prayers</button>
+          <button id="study-button" v-on:click="sortByTopicAPICall('Study')">Bible Studies</button>
+          <button id="evidence-button" v-on:click="sortByTopicAPICall('Evidence')">Evidence</button>
+        </div>
+      </div>
     </div>
     <h1 id="not-found"></h1>
     <div class="article-flex">
@@ -27,6 +27,9 @@
             <h1 class="article-title">{{ article.title }}</h1>
 
             <p class="article-p">By: {{ article.createdBy }}</p>
+            <div class="app">
+              <vue-feedback-reaction v-model="feedback" />
+            </div>
           </div>
         </RouterLink>
         <div class="article-footer">
@@ -50,16 +53,15 @@
 </template>
 
 <script>
-  import { RouterLink } from 'vue-router'
-  import Dailyverse from '../components/Dailyverse.vue'
-  import AboutView from './AboutView.vue'
-  import Navi from '../components/Navi.vue'
-  import DateIco from '../resources/Capture.PNG'
+import { RouterLink } from 'vue-router'
+import Dailyverse from '../components/Dailyverse.vue'
+import Navi from '../components/Navi.vue'
 
 export default {
   data() {
     return {
       result: null // Initialize result to null
+      
     }
   },
   mounted() {
@@ -67,138 +69,139 @@ export default {
     let DATASET = 'production'
     let QUERY = encodeURIComponent('*[_type == "article"]')
     let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`
-    let h1 = document.getElementById("not-found")
+    let h1 = document.getElementById('not-found')
     fetch(URL)
       .then((res) => res.json())
       .then(({ result }) => {
         if (result.length === 0) {
-           // Handle the case when no articles are found
-        this.result = null; // Clear the result
-        h1.textContent = "No Results Found"
-      } else {
-        this.result = result.map((article) => {
-          const imageUrl = article.imageUrl
-          return {
-            ...article,
-            imageUrl
-          }
-        })
-      }
+          // Handle the case when no articles are found
+          this.result = null // Clear the result
+          h1.textContent = 'No Results Found'
+        } else {
+          this.result = result.map((article) => {
+            const imageUrl = article.imageUrl
+            return {
+              ...article,
+              imageUrl
+            }
+          })
+        }
       })
       .catch((err) => console.error(err))
   },
   methods: {
-    
     convertMonth(utcString) {
       const date = new Date(utcString)
       const monthWord = date.toLocaleString('en-US', { month: 'long' })
       return monthWord
     },
     changeHandler(e) {
-  e.preventDefault();
-  let input = e.target.value; // Get the value from the input box
-  let PROJECT_ID = 'xinvfi3s';
-  let DATASET = 'production';
-  let QUERY = encodeURIComponent(`*[_type == "article" && (title match "${input}" || createdBy match "${input}" || Category match "${input}")]`); // Update the query to include search conditions
-  let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
-  let h1 = document.getElementById("not-found");
-  
-  if (input) {
-    fetch(URL)
-      .then((res) => res.json())
-      .then(({ result }) => {
-        if (result.length === 0) {
-          this.result = null; // Clear the result
-          h1.textContent = "No Results Found";
-        } else {
+      e.preventDefault()
+      let input = e.target.value // Get the value from the input box
+      let PROJECT_ID = 'xinvfi3s'
+      let DATASET = 'production'
+      let QUERY = encodeURIComponent(
+        `*[_type == "article" && (title match "${input}" || createdBy match "${input}" || Category match "${input}")]`
+      ) // Update the query to include search conditions
+      let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`
+      let h1 = document.getElementById('not-found')
+
+      if (input) {
+        fetch(URL)
+          .then((res) => res.json())
+          .then(({ result }) => {
+            if (result.length === 0) {
+              this.result = null // Clear the result
+              h1.textContent = 'No Results Found'
+            } else {
+              this.result = result.map((article) => {
+                const imageUrl = article.imageUrl
+                h1.textContent = ' '
+                return {
+                  ...article,
+                  imageUrl
+                }
+              })
+            }
+          })
+          .catch((err) => console.error(err))
+      } else {
+        this.normalAPICall()
+        h1.textContent = ' '
+      }
+    },
+
+    normalAPICall() {
+      const prayerButton = document.getElementById('prayer-button')
+      const studyButton = document.getElementById('study-button')
+      const evidenceButton = document.getElementById('evidence-button')
+      const allButton = document.getElementById('all-button')
+      allButton.classList.add('selected-button')
+      studyButton.classList.remove('selected-button')
+      prayerButton.classList.remove('selected-button')
+      evidenceButton.classList.remove('selected-button')
+      let PROJECT_ID = 'xinvfi3s'
+      let DATASET = 'production'
+      let QUERY = encodeURIComponent('*[_type == "article"]')
+      let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`
+      fetch(URL)
+        .then((res) => res.json())
+        .then(({ result }) => {
           this.result = result.map((article) => {
-            const imageUrl = article.imageUrl;
-            h1.textContent = " ";
+            const imageUrl = article.imageUrl
             return {
               ...article,
               imageUrl
-            };
-          });
-        }
-      })
-      .catch((err) => console.error(err));
-  } else {
-    this.normalAPICall();
-    h1.textContent = " ";
-  }
-},
-  
-  normalAPICall() {
-  const prayerButton = document.getElementById("prayer-button")
-  const studyButton = document.getElementById("study-button")
-  const evidenceButton = document.getElementById("evidence-button")
-  const allButton = document.getElementById("all-button")
-    allButton.classList.add("selected-button")
-    studyButton.classList.remove("selected-button")
-    prayerButton.classList.remove("selected-button")
-    evidenceButton.classList.remove("selected-button")
-    let PROJECT_ID = 'xinvfi3s'
-    let DATASET = 'production'
-    let QUERY = encodeURIComponent('*[_type == "article"]')
-    let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`
-    fetch(URL)
-      .then((res) => res.json())
-      .then(({ result }) => {
-        this.result = result.map((article) => {
-          const imageUrl = article.imageUrl
-          return {
-            ...article,
-            imageUrl
-          }
+            }
+          })
         })
-      })
-      .catch((err) => console.error(err))
-  },
-  
-  sortByTopicAPICall(topic) {
-  const prayerButton = document.getElementById("prayer-button")
-  const studyButton = document.getElementById("study-button")
-  const evidenceButton = document.getElementById("evidence-button")
-  const allButton = document.getElementById("all-button")
-  let h1 = document.getElementById("not-found")
-  h1.textContent = " "
-    switch (topic) {
-      case "Prayer":
-        prayerButton.classList.add("selected-button")
-        allButton.classList.remove("selected-button")
-        studyButton.classList.remove("selected-button")
-        evidenceButton.classList.remove("selected-button")
-        break;
-      case "Study":
-        studyButton.classList.add("selected-button")
-        allButton.classList.remove("selected-button")
-        prayerButton.classList.remove("selected-button")
-        evidenceButton.classList.remove("selected-button")
-        break;
-      case "Evidence":
-        evidenceButton.classList.add("selected-button")
-        allButton.classList.remove("selected-button")
-        prayerButton.classList.remove("selected-button")
-        studyButton.classList.remove("selected-button")
-        break;
+        .catch((err) => console.error(err))
+    },
+
+    sortByTopicAPICall(topic) {
+      const prayerButton = document.getElementById('prayer-button')
+      const studyButton = document.getElementById('study-button')
+      const evidenceButton = document.getElementById('evidence-button')
+      const allButton = document.getElementById('all-button')
+      let h1 = document.getElementById('not-found')
+      h1.textContent = ' '
+      switch (topic) {
+        case 'Prayer':
+          prayerButton.classList.add('selected-button')
+          allButton.classList.remove('selected-button')
+          studyButton.classList.remove('selected-button')
+          evidenceButton.classList.remove('selected-button')
+          break
+        case 'Study':
+          studyButton.classList.add('selected-button')
+          allButton.classList.remove('selected-button')
+          prayerButton.classList.remove('selected-button')
+          evidenceButton.classList.remove('selected-button')
+          break
+        case 'Evidence':
+          evidenceButton.classList.add('selected-button')
+          allButton.classList.remove('selected-button')
+          prayerButton.classList.remove('selected-button')
+          studyButton.classList.remove('selected-button')
+          break
+      }
+      let PROJECT_ID = 'xinvfi3s'
+      let DATASET = 'production'
+      let QUERY = `*[Category == "${topic}"]`
+      let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`
+      fetch(URL)
+        .then((res) => res.json())
+        .then(({ result }) => {
+          this.result = result.map((article) => {
+            const imageUrl = article.imageUrl
+            return {
+              ...article,
+              imageUrl
+            }
+          })
+        })
+        .catch((err) => console.error(err))
     }
-    let PROJECT_ID = 'xinvfi3s'
-    let DATASET = 'production'
-    let QUERY = `*[Category == "${topic}"]`
-    let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`
-    fetch(URL)
-      .then((res) => res.json())
-      .then(({ result }) => {
-        this.result = result.map((article) => {
-          const imageUrl = article.imageUrl
-          return {
-            ...article,
-            imageUrl
-          }
-        })
-      })
-      .catch((err) => console.error(err))
-  }
   },
   components: {
     RouterLink,
@@ -223,11 +226,11 @@ export default {
 }
 
 #topics-flex {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: baseline;    
-    margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 20px;
 }
 
 .nav-text {
@@ -250,7 +253,7 @@ button:hover {
 }
 
 .selected-button {
-  background-color: #FFD60A !important;
+  background-color: #ffd60a !important;
   color: black;
 }
 
@@ -259,10 +262,9 @@ button:hover {
 }
 
 #buttons-flex {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;   
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
-
 </style>

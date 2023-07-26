@@ -46,6 +46,7 @@
 <img id="image-12" />
 <br/>
 </div>
+<div id="disqus_thread"></div>
       <RouterLink id="back-home" to="/">
         Back To Home
       </RouterLink>
@@ -53,17 +54,15 @@
 
 <!-- 
 Features to add:
-Comment section users can log in with social medias []
-Add search bar in Bible Evidence page []
-Possibly add emoji reactions to the articles [] check out: https://github.com/IvanSotelo/VueFeedbackReaction
+Find better solution for the daily bible verse []
 Possible add emoji reactions to the daily verse [] check out: https://github.com/IvanSotelo/VueFeedbackReaction
 Gospel playlist tab []
 Possibly add youtube embedded playlists in Gospel playlist tab []
 See about making potentially a christian radio for the website: https://www.icecast.org/download/ []
 Sign up for email notifications every time a new article is made []
-Find better solution for the daily bible verse []
 Make logo for website []
 Sort BibleEvidence text, create section tags for easy navigation []
+Add analytics for website vists and page views []
 
 Refactors:
 format all files []
@@ -73,7 +72,12 @@ sort imports []
 refactor all dry code []
 remove all unused imports []
 
+Scrapped Features:
+Add search bar in Bible Evidence page [Scrapped] (They can just use Ctrl+ F)
+
 Complete:
+Comment section users can log in with social medias [X]
+Possibly add emoji reactions to the articles [X] check out: https://github.com/IvanSotelo/VueFeedbackReaction
 Make the search bar work on every page [X]
 instead of using identicial pages, just use one component and render it dynamically based on filter tabs [X]
 Make one function to call the sanity api, and use a param to specify what the query is [X]
@@ -114,6 +118,21 @@ export default {
   },
   
   created() {
+     /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://corechristianlivingblog.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
     let currentArticle = {}
     let PROJECT_ID = 'xinvfi3s';
     let DATASET = 'production';
@@ -212,6 +231,11 @@ export default {
 </script>
 
 <style>
+#disqus_thread {
+  width: 100%;
+}
+
+
 img {
   width: 30em;
 }

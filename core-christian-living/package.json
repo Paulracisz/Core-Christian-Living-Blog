@@ -15,8 +15,13 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@emoji-mart/data": "^1.1.2",
+    "@emoji-mart/react": "^1.1.1",
     "axios": "^1.4.0",
+    "emoji-mart": "^5.5.2",
     "firebase": "^9.22.2",
+    "postscribe": "^2.0.8",
+    "vue-feedback-reaction": "^1.2.0",
     "vue-router": "^4.2.0"
   },
   "devDependencies": {
