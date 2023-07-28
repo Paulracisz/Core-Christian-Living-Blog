@@ -22,6 +22,7 @@
     "firebase": "^9.22.2",
     "postscribe": "^2.0.8",
     "vue-feedback-reaction": "^1.2.0",
+    "vue-plugin-load-script": "^2.1.1",
     "vue-router": "^4.2.0"
   },
   "devDependencies": {

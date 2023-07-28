@@ -60,9 +60,9 @@ Gospel playlist tab []
 Possibly add youtube embedded playlists in Gospel playlist tab []
 See about making potentially a christian radio for the website: https://www.icecast.org/download/ []
 Sign up for email notifications every time a new article is made []
-Make logo for website []
 Sort BibleEvidence text, create section tags for easy navigation []
-Add analytics for website vists and page views []
+Purchase google domain for site []
+Add analytics for website vists and page views (Will set this up with google analytics once I have google domain) []
 
 Refactors:
 format all files []
@@ -76,6 +76,7 @@ Scrapped Features:
 Add search bar in Bible Evidence page [Scrapped] (They can just use Ctrl+ F)
 
 Complete:
+Make logo for website [X]
 Comment section users can log in with social medias [X]
 Possibly add emoji reactions to the articles [X] check out: https://github.com/IvanSotelo/VueFeedbackReaction
 Make the search bar work on every page [X]
@@ -265,7 +266,8 @@ p {
   #par3,
   #par4,
   #par5,
-  #par6 {
+  #par6,
+  #par7 {
     margin: 1em;
     color: white;
     font-size: 17px;

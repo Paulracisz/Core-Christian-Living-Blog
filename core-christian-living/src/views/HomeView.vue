@@ -19,6 +19,7 @@
       </div>
     </div>
     <h1 id="not-found"></h1>
+
     <div class="article-flex">
       <div class="article-box" v-for="article in result" :key="article._id">
         <RouterLink :to="`/article/${article._id}`">
@@ -47,6 +48,11 @@
         </div>
       </div>
     </div>
+    <div id="dailyVerseContainer">
+      <h2 id="verse-header">Verse of the Day</h2>
+      <p>(NIV)</p>
+      <div id="dailyVersesWrapper"></div>
+    </div>
     <a id="back-home" href="#top" class="home-back" to="/"> Back To The Top </a>
     <div class="credit-div"><p class="credit-text">Website Created By Paul Racisz © 2023</p></div>
   </div>
@@ -56,6 +62,7 @@
 import { RouterLink } from 'vue-router'
 import Dailyverse from '../components/Dailyverse.vue'
 import Navi from '../components/Navi.vue'
+import { loadScript } from "vue-plugin-load-script";
 
 export default {
   data() {
@@ -65,6 +72,7 @@ export default {
     }
   },
   mounted() {
+    this.loadAndWriteToDiv()
     let PROJECT_ID = 'xinvfi3s'
     let DATASET = 'production'
     let QUERY = encodeURIComponent('*[_type == "article"]')
@@ -90,6 +98,25 @@ export default {
       .catch((err) => console.error(err))
   },
   methods: {
+    loadAndWriteToDiv() {
+      const scriptUrl = "https://dailyverses.net/get/verse.js?language=niv";
+
+      loadScript(scriptUrl)
+        .then(() => {
+          // VAD script loaded
+          const verseText = this.getVerseTextFromVADScript();
+
+          // Write the text to the div
+          const divElement = document.getElementById("yourDivId"); // Replace "yourDivId" with the actual ID of your div
+          divElement.innerHTML = verseText;
+        })
+        .catch(() => {
+          // Failed to fetch script
+          console.error("Failed to load the script.");
+        });
+    },
+    
+    
     convertMonth(utcString) {
       const date = new Date(utcString)
       const monthWord = date.toLocaleString('en-US', { month: 'long' })
@@ -214,6 +241,53 @@ export default {
 <style>
 #not-found {
   line-height: 20;
+}
+
+.dailyVerses > a {
+    color:#ffd60a;    
+    text-align: center;
+    font-size: 1.5em;
+    color: #FFD60A;
+    transition: 0.3 ease all;
+    margin-bottom: 2em;
+}
+
+.dailyVerses > a:hover {
+  text-decoration: underline;
+}
+
+#dailyVersesWrapper {
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  padding: 20px;
+  margin: 10px;
+  background-color: #001D3D;
+  margin-top: 0;
+  border: 0px solid;
+  border-radius: 10px;
+  width: 15em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+#verse-header {
+  margin: 0;
+}
+
+#dailyVerseContainer {
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 #back-home {
