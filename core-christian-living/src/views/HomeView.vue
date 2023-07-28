@@ -50,8 +50,12 @@
     </div>
     <div id="dailyVerseContainer">
       <h2 id="verse-header">Verse of the Day</h2>
-      <p>(NKJV)</p>
-      <div id="dailyVersesWrapper"></div>
+      <div id="translation-selector">
+      <p id="NKJV" v-on:click="loadAndWriteToDiv('NKJV')">(NKJV)</p>
+      <p id="NLT" v-on:click="loadAndWriteToDiv('NLT')">(NLT)</p>
+      <p id="KJV" v-on:click="loadAndWriteToDiv('KJV')">(KJV)</p>
+      </div>
+      <div id="dailyVersesWrapper"> {{ verseText }} <!-- Display the verse text --></div>
     </div>
     <a id="back-home" href="#top" class="home-back" to="/"> Back To The Top </a>
     <div class="credit-div"><p class="credit-text">Website Created By Paul Racisz © 2023</p></div>
@@ -62,17 +66,20 @@
 import { RouterLink } from 'vue-router'
 import Dailyverse from '../components/Dailyverse.vue'
 import Navi from '../components/Navi.vue'
-import { loadScript } from "vue-plugin-load-script";
+import { loadScript } from 'vue-plugin-load-script'
 
 export default {
   data() {
     return {
-      result: null // Initialize result to null
-      
+      result: null, // Initialize result to null
+      verseTranslation: 'NKJV', // Default translation
+      verseText: '' // Store the verse text
     }
   },
+  created() {
+    this.loadAndWriteToDiv();
+  },
   mounted() {
-    this.loadAndWriteToDiv()
     let PROJECT_ID = 'xinvfi3s'
     let DATASET = 'production'
     let QUERY = encodeURIComponent('*[_type == "article"]')
@@ -98,25 +105,67 @@ export default {
       .catch((err) => console.error(err))
   },
   methods: {
-    loadAndWriteToDiv() {
-      const scriptUrl = "https://dailyverses.net/get/verse.js?language=nkjv";
+    getVerseTextFromVADScript() {
+      // Create a temporary hidden element to capture the VAD script output
+      const tempElement = document.createElement("div");
+      tempElement.style.display = "none";
+      document.body.appendChild(tempElement);
 
+      // Load the VAD script and let it write to the hidden element
+      const script = document.createElement("script");
+      script.src = `https://dailyverses.net/get/verse.js?language=${this.verseTranslation}`;
+      tempElement.appendChild(script);
+
+      // Extract the content from the hidden element
+      const verseText = tempElement.innerText;
+
+      // Remove the temporary element from the DOM
+      document.body.removeChild(tempElement);
+
+      return verseText;
+    },
+    loadAndWriteToDiv(translation) {
+      if (!translation) {
+        translation = this.verseTranslation;
+      }
+      let pTag = document.getElementById(`${translation}`)
+      let NKJV = document.getElementById("NKJV")
+      let NLT = document.getElementById("NLT")
+      let KJV = document.getElementById("KJV")
+      if (pTag) {
+        switch (pTag.id) {
+          case 'NKJV':
+          KJV.style.color = "white"
+          NLT.style.color = "white"
+          pTag.style.color = "#FFD60A"
+          case "NLT":
+          KJV.style.color = "white"
+          NKJV.style.color = "white"
+          pTag.style.color = "#FFD60A"
+          case "KJV":
+          NLT.style.color = "white"
+          NKJV.style.color = "white"
+          pTag.style.color = "#FFD60A"
+        default:
+        }
+      }
+      
+      const scriptUrl = `https://dailyverses.net/get/verse.js?language=${translation}`
+      
       loadScript(scriptUrl)
         .then(() => {
+          // Update the data with the new verse text and translation
+          this.verseTranslation = translation
           // VAD script loaded
-          const verseText = this.getVerseTextFromVADScript();
-
-          // Write the text to the div
-          const divElement = document.getElementById("yourDivId"); // Replace "yourDivId" with the actual ID of your div
-          divElement.innerHTML = verseText;
+          const verseTextFromScript = this.getVerseTextFromVADScript()
+          this.verseText = verseTextFromScript
         })
         .catch(() => {
           // Failed to fetch script
-          console.error("Failed to load the script.");
-        });
+          console.error('Failed to load the script.')
+        })
     },
-    
-    
+
     convertMonth(utcString) {
       const date = new Date(utcString)
       const monthWord = date.toLocaleString('en-US', { month: 'long' })
@@ -243,13 +292,31 @@ export default {
   line-height: 20;
 }
 
+#NKJV {
+  color: #FFD60A;
+}
+
+#NKJV,
+#NLT,
+#KJV:hover {
+  cursor: pointer;
+    user-select: none;
+}
+
+#translation-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5px;
+}
+
 .dailyVerses > a {
-    color:#ffd60a;    
-    text-align: center;
-    font-size: 1.5em;
-    color: #FFD60A;
-    transition: 0.3 ease all;
-    margin-bottom: 2em;
+  color: #ffd60a;
+  text-align: center;
+  font-size: 1.5em;
+  color: #ffd60a;
+  transition: 0.3 ease all;
+  margin-bottom: 2em;
 }
 
 .dailyVerses > a:hover {
@@ -262,7 +329,7 @@ export default {
   text-align: center;
   padding: 20px;
   margin: 10px;
-  background-color: #001D3D;
+  background-color: #001d3d;
   margin-top: 0;
   border: 0px solid;
   border-radius: 10px;
@@ -271,7 +338,6 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
 }
 
 #verse-header {
