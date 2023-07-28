@@ -54,7 +54,6 @@
 
 <!-- 
 Features to add:
-Find better solution for the daily bible verse []
 Possible add emoji reactions to the daily verse [] check out: https://github.com/IvanSotelo/VueFeedbackReaction
 Gospel playlist tab []
 Possibly add youtube embedded playlists in Gospel playlist tab []
@@ -76,6 +75,7 @@ Scrapped Features:
 Add search bar in Bible Evidence page [Scrapped] (They can just use Ctrl+ F)
 
 Complete:
+Find better solution for the daily bible verse [X]
 Make logo for website [X]
 Comment section users can log in with social medias [X]
 Possibly add emoji reactions to the articles [X] check out: https://github.com/IvanSotelo/VueFeedbackReaction

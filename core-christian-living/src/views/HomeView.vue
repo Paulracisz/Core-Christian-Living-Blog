@@ -50,7 +50,7 @@
     </div>
     <div id="dailyVerseContainer">
       <h2 id="verse-header">Verse of the Day</h2>
-      <p>(NIV)</p>
+      <p>(NKJV)</p>
       <div id="dailyVersesWrapper"></div>
     </div>
     <a id="back-home" href="#top" class="home-back" to="/"> Back To The Top </a>
@@ -99,7 +99,7 @@ export default {
   },
   methods: {
     loadAndWriteToDiv() {
-      const scriptUrl = "https://dailyverses.net/get/verse.js?language=niv";
+      const scriptUrl = "https://dailyverses.net/get/verse.js?language=nkjv";
 
       loadScript(scriptUrl)
         .then(() => {
