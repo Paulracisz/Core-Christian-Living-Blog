@@ -61,14 +61,14 @@ Sort BibleEvidence text, create section tags for easy navigation []
 Purchase google domain for site []
 Add analytics for website vists and page views (Will set this up with google analytics once I have google domain) []
 
-Refactors:
-add comments explaining the code []
-refactor all dry code []
+Refactors: [X]
 
 Scrapped Features:
 Add search bar in Bible Evidence page [Scrapped] (They can just use Ctrl+ F)
 
 Complete:
+refactor all dry code [X]
+add comments explaining the code [X]
 format all files [X]
 sort imports [X]
 remove all unused imports [X]
