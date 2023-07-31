@@ -7,9 +7,7 @@
     <h1>Bible Evidence</h1>
     <div id="bible-evidence-box">
       <p id="bible-evidence-text">
-        Biblical Verses Evidence <br />
-        Serve No Other Religion- <br />
-        Serving Religions <br />
+        Serving No Other Lowercase "gods" <br />
         Galatians 1:7-10<br />
         Psalms 81:9<br />
         Psalms 96:4-5<br />
