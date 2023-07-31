@@ -797,40 +797,25 @@
 </template>
 
 <script>
+// libraries
 import { RouterLink } from 'vue-router'
-import Dailyverse from '../components/Dailyverse.vue'
+
+// components
 import Navi from '../components/Navi.vue'
-import DateIco from '../resources/Capture.PNG'
 
 export default {
   data() {
-    return {
-      searchText: '', // Initialize searchText to an empty string
-    }
+    return {}
   },
   components: {
     RouterLink,
-    Navi,
-    Dailyverse
-  },
-  methods: {
-    searchForText() {
-      const element = document.getElementById('bible-evidence-text');
-      const searchText = this.searchText.toLowerCase();
-      const words = element.innerText.toLowerCase().split('\n');
-
-      for (let i = 0; i < words.length; i++) {
-        if (words[i].includes(searchText)) {
-          element.scrollTo({ top: i * 20, behavior: 'smooth' });
-          return; // Stop iterating if the word is found
-        }
-      }
-    }
-}
+    Navi
+  }
 }
 </script>
 
 <style>
+/* IDs */
 #bible-evidence-text {
   color: white;
   display: flex;

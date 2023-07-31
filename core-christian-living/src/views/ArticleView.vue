@@ -1,55 +1,53 @@
 <template>
   <div id="header-flex">
-<h1 id="article-header"></h1>
+    <h1 id="article-header"></h1>
   </div>
-<div id="p-flex">
-<p id="date"></p>
-<p id="created-by"></p>
-</div>
-<div id="article-flex">
-<img id="article-thumb" />
-</div>
-<div id="text-flex">
-  <p id="text"></p>
-  <img id="image-2" />
-  <br/>
-<p id="par2"></p>
-<img id="image-3" />
-<br/>
-<p id="par3"></p>
-<br/>
-<p id="par4"></p>
-<img id="image-4" />
-<br/>
-<p id="par5"></p>
-<img id="image-5" />
-<br/>
-<p id="par6"></p>
-<img id="image-6" />
-<br/>
-<p id="par7"></p>
-<img id="image-7" />
-<br/>
-<p id="par8"></p>
-<img id="image-8" />
-<br/>
-<p id="par9"></p>
-<img id="image-9" />
-<br/>
-<p id="par10"></p>
-<img id="image-10" />
-<br/>
-<p id="par11"></p>
-<img id="image-11" />
-<br/>
-<p id="par12"></p>
-<img id="image-12" />
-<br/>
-</div>
-<div id="disqus_thread"></div>
-      <RouterLink id="back-home" to="/">
-        Back To Home
-      </RouterLink>
+  <div id="p-flex">
+    <p id="date"></p>
+    <p id="created-by"></p>
+  </div>
+  <div id="article-flex">
+    <img id="article-thumb" />
+  </div>
+  <div id="text-flex">
+    <p id="text"></p>
+    <img id="image-2" />
+    <br />
+    <p id="par2"></p>
+    <img id="image-3" />
+    <br />
+    <p id="par3"></p>
+    <br />
+    <p id="par4"></p>
+    <img id="image-4" />
+    <br />
+    <p id="par5"></p>
+    <img id="image-5" />
+    <br />
+    <p id="par6"></p>
+    <img id="image-6" />
+    <br />
+    <p id="par7"></p>
+    <img id="image-7" />
+    <br />
+    <p id="par8"></p>
+    <img id="image-8" />
+    <br />
+    <p id="par9"></p>
+    <img id="image-9" />
+    <br />
+    <p id="par10"></p>
+    <img id="image-10" />
+    <br />
+    <p id="par11"></p>
+    <img id="image-11" />
+    <br />
+    <p id="par12"></p>
+    <img id="image-12" />
+    <br />
+  </div>
+  <div id="disqus_thread"></div>
+  <RouterLink id="back-home" to="/"> Back To Home </RouterLink>
 </template>
 
 <!-- 
@@ -64,17 +62,17 @@ Purchase google domain for site []
 Add analytics for website vists and page views (Will set this up with google analytics once I have google domain) []
 
 Refactors:
-format all files []
-remove unused files []
 add comments explaining the code []
-sort imports []
 refactor all dry code []
-remove all unused imports []
 
 Scrapped Features:
 Add search bar in Bible Evidence page [Scrapped] (They can just use Ctrl+ F)
 
 Complete:
+format all files [X]
+sort imports [X]
+remove all unused imports [X]
+remove unused files [X]
 Find better solution for the daily bible verse [X]
 Make logo for website [X]
 Comment section users can log in with social medias [X]
@@ -114,129 +112,72 @@ export default {
   name: 'ArticlePage',
   data() {
     return {
-      article: {},
-    };
+      article: {}
+    }
   },
-  
+
   created() {
-     /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    // LOAD DIQUS COMMENTS
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
     /*
     var disqus_config = function () {
     this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
     this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     */
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://corechristianlivingblog.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
+    ;(function () {
+      // DON'T EDIT BELOW THIS LINE
+      var d = document,
+        s = d.createElement('script')
+      s.src = 'https://corechristianlivingblog.disqus.com/embed.js'
+      s.setAttribute('data-timestamp', +new Date())
+      ;(d.head || d.body).appendChild(s)
+    })()
+    // construct API Url
     let currentArticle = {}
-    let PROJECT_ID = 'xinvfi3s';
-    let DATASET = 'production';
-    let QUERY = encodeURIComponent('*[_type == "article"]');
-    let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
-    const articleId = this.$route.params.id;
+    let PROJECT_ID = 'xinvfi3s'
+    let DATASET = 'production'
+    let QUERY = encodeURIComponent('*[_type == "article"]')
+    let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`
+    const articleId = this.$route.params.id
     fetch(URL)
       .then((res) => res.json())
       .then(({ result }) => {
-       result.map((article) => {
+        result.map((article) => {
           if (article._id === articleId) {
-             currentArticle = article
-            let h1 = document.querySelector("h1")
-            let text = document.getElementById("text")
-            let date = document.getElementById("date")
-            let createdBy = document.getElementById("created-by")
+            currentArticle = article
+            let h1 = document.querySelector('h1')
+            let text = document.getElementById('text')
+            let date = document.getElementById('date')
+            let createdBy = document.getElementById('created-by')
             let formattedDate = new Date(currentArticle._createdAt)
-            let image = document.getElementById("article-thumb")
-            let par2 = document.getElementById("par2")
-            let par3 = document.getElementById("par3")
-            let par4 = document.getElementById("par4")
-            let par5 = document.getElementById("par5")
-            let par6 = document.getElementById("par6") 
-            let par7 = document.getElementById("par7")
-            let par8 = document.getElementById("par8")
-            let par9 = document.getElementById("par9")
-            let par10 = document.getElementById("par10")
-            let par11 = document.getElementById("par11")
-            let par12 = document.getElementById("par12")
-            image.src = currentArticle.imageUrl
-            date.textContent = `${formattedDate.toGMTString()}`
-            createdBy.textContent = `Created By: ${currentArticle.createdBy}`
+            let image = document.getElementById('article-thumb')
             text.textContent = currentArticle.Body
-            par2.textContent = currentArticle.paragraph2
-            par3.textContent = currentArticle.paragraph3
-            par4.textContent = currentArticle.paragraph4
-            par5.textContent = currentArticle.paragraph5
-            par6.textContent = currentArticle.paragraph6
-            par7.textContent = currentArticle.paragraph7
-            par8.textContent = currentArticle.paragraph8
-            par9.textContent = currentArticle.paragraph9
-            par10.textContent = currentArticle.paragraph10
-            par11.textContent = currentArticle.paragraph11
-            par12.textContent = currentArticle.paragraph12
+            date.textContent = `${formattedDate.toGMTString()}`
+            image.src = currentArticle.imageUrl
+            createdBy.textContent = `Created By: ${currentArticle.createdBy}`
             h1.textContent = currentArticle.title
-            if (currentArticle.image2) {
-              let image2 = document.getElementById("image-2")
-              image2.src = currentArticle.image2Url
+            // populate each paragraph with text
+            for (let i=2; i < 12; i++) {
+              document.getElementById(`par${i}`).textContent = currentArticle[`paragraph${i}`]
             }
-            if (currentArticle.image3) {
-              let image3 = document.getElementById("image-3")
-              image3.src = currentArticle.image3Url
-            }
-            if (currentArticle.image4) {
-              let image4 = document.getElementById("image-4")
-              image4.src = currentArticle.image4Url
-            }
-            if (currentArticle.image5) {
-              let image5 = document.getElementById("image-5")
-              image5.src = currentArticle.image5Url
-            }
-            if (currentArticle.image6) {
-              let image6 = document.getElementById("image-6")
-              image6.src = currentArticle.image6Url
-            }
-            if (currentArticle.image7) {
-              let image7 = document.getElementById("image-7")
-              image7.src = currentArticle.image7Url
-            }
-            if (currentArticle.image8) {
-              let image8 = document.getElementById("image-8")
-              image8.src = currentArticle.image8Url
-            }
-            if (currentArticle.image9) {
-              let image9 = document.getElementById("image-9")
-              image9.src = currentArticle.image9Url
-            }
-            if (currentArticle.image10) {
-              let image10 = document.getElementById("image-10")
-              image10.src = currentArticle.image10Url
-            }
-            if (currentArticle.image11) {
-              let image11 = document.getElementById("image-11")
-              image11.src = currentArticle.image11Url
-            }
-            if (currentArticle.image12) {
-              let image12 = document.getElementById("image-12")
-              image12.src = currentArticle.image12Url
+            // populate each image 
+            for (let j=2; j < 12; j++) {
+              if (currentArticle[`image${j}Url`])
+              document.getElementById(`image-${j}`).src = currentArticle[`image${j}Url`]
             }
           }
-        });
+        })
       })
-      .catch((err) => console.error(err));
-  },
+      .catch((err) => console.error(err))
+  }
 }
 </script>
 
 <style>
-#disqus_thread {
-  width: 100%;
-}
-
-
+/* tags */
 img {
   width: 30em;
 }
@@ -245,88 +186,91 @@ p {
   line-height: 150%;
 }
 
+/* classes */
+.about {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.route {
+  text-align: center;
+  font-size: 1.5em;
+  transition: 0.3 ease all;
+  margin-bottom: 2em;
+}
+
+/* IDs */
 #created-by {
-  
   color: white;
 }
 
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-  
-  #date {
-    margin: 2em;
-    color: white;
-  }
-  
-  #text,
-  #par2,
-  #par3,
-  #par4,
-  #par5,
-  #par6,
-  #par7 {
-    margin: 1em;
-    color: white;
-    font-size: 17px;
-    line-height: 26px;
-    border-radius: 10px;
-  }
-  
-  #p-flex {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-bottom: 2em;
-  }
-  
-  #header-flex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 500px;
-  }
-  
-  #text-flex {
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    max-width: 1000px;
-  }
-  
-  .route {
-    text-align: center;
-    font-size: 1.5em;
-    transition: 0.3 ease all;
-    margin-bottom: 2em;
-  }
+#date {
+  margin: 2em;
+  color: white;
+}
 
-  #back-home {
-    text-align: center;
-    font-size: 1.5em;
-    color: #FFD60A;
-    transition: 0.3 ease all;
-    margin-bottom: 2em;
-  }
+#disqus_thread {
+  width: 100%;
+}
 
-  #back-home:hover {
-    text-decoration: underline;
-    filter: brightness(50%);
-  }
-  
-  #article-header {
-    font-size: 3em;
-  }
-  
-  #article-flex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+#text,
+#par2,
+#par3,
+#par4,
+#par5,
+#par6,
+#par7 {
+  margin: 1em;
+  color: white;
+  font-size: 17px;
+  line-height: 26px;
+  border-radius: 10px;
+}
 
+#p-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 2em;
+}
+
+#header-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+}
+
+#text-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 1000px;
+}
+
+#back-home {
+  text-align: center;
+  font-size: 1.5em;
+  color: #ffd60a;
+  transition: 0.3 ease all;
+  margin-bottom: 2em;
+}
+
+#back-home:hover {
+  text-decoration: underline;
+  filter: brightness(50%);
+}
+
+#article-header {
+  font-size: 3em;
+}
+
+#article-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 </style>

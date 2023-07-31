@@ -51,11 +51,14 @@
     <div id="dailyVerseContainer">
       <h2 id="verse-header">Verse of the Day</h2>
       <div id="translation-selector">
-      <p id="NKJV" v-on:click="loadAndWriteToDiv('NKJV')">(NKJV)</p>
-      <p id="NLT" v-on:click="loadAndWriteToDiv('NLT')">(NLT)</p>
-      <p id="KJV" v-on:click="loadAndWriteToDiv('KJV')">(KJV)</p>
+        <p id="NKJV" v-on:click="loadAndWriteToDiv('NKJV')">(NKJV)</p>
+        <p id="NLT" v-on:click="loadAndWriteToDiv('NLT')">(NLT)</p>
+        <p id="KJV" v-on:click="loadAndWriteToDiv('KJV')">(KJV)</p>
       </div>
-      <div id="dailyVersesWrapper"> {{ verseText }} <!-- Display the verse text --></div>
+      <div id="dailyVersesWrapper">
+        {{ verseText }}
+        <!-- Display the verse text -->
+      </div>
     </div>
     <a id="back-home" href="#top" class="home-back" to="/"> Back To The Top </a>
     <div class="credit-div"><p class="credit-text">Website Created By Paul Racisz © 2023</p></div>
@@ -63,9 +66,11 @@
 </template>
 
 <script>
-import { RouterLink } from 'vue-router'
-import Dailyverse from '../components/Dailyverse.vue'
+// components
 import Navi from '../components/Navi.vue'
+
+// libraries
+import { RouterLink } from 'vue-router'
 import { loadScript } from 'vue-plugin-load-script'
 
 export default {
@@ -77,7 +82,7 @@ export default {
     }
   },
   created() {
-    this.loadAndWriteToDiv();
+    this.loadAndWriteToDiv()
   },
   mounted() {
     let PROJECT_ID = 'xinvfi3s'
@@ -107,51 +112,51 @@ export default {
   methods: {
     getVerseTextFromVADScript() {
       // Create a temporary hidden element to capture the VAD script output
-      const tempElement = document.createElement("div");
-      tempElement.style.display = "none";
-      document.body.appendChild(tempElement);
+      const tempElement = document.createElement('div')
+      tempElement.style.display = 'none'
+      document.body.appendChild(tempElement)
 
       // Load the VAD script and let it write to the hidden element
-      const script = document.createElement("script");
-      script.src = `https://dailyverses.net/get/verse.js?language=${this.verseTranslation}`;
-      tempElement.appendChild(script);
+      const script = document.createElement('script')
+      script.src = `https://dailyverses.net/get/verse.js?language=${this.verseTranslation}`
+      tempElement.appendChild(script)
 
       // Extract the content from the hidden element
-      const verseText = tempElement.innerText;
+      const verseText = tempElement.innerText
 
       // Remove the temporary element from the DOM
-      document.body.removeChild(tempElement);
+      document.body.removeChild(tempElement)
 
-      return verseText;
+      return verseText
     },
     loadAndWriteToDiv(translation) {
       if (!translation) {
-        translation = this.verseTranslation;
+        translation = this.verseTranslation
       }
       let pTag = document.getElementById(`${translation}`)
-      let NKJV = document.getElementById("NKJV")
-      let NLT = document.getElementById("NLT")
-      let KJV = document.getElementById("KJV")
+      let NKJV = document.getElementById('NKJV')
+      let NLT = document.getElementById('NLT')
+      let KJV = document.getElementById('KJV')
       if (pTag) {
         switch (pTag.id) {
           case 'NKJV':
-          KJV.style.color = "white"
-          NLT.style.color = "white"
-          pTag.style.color = "#FFD60A"
-          case "NLT":
-          KJV.style.color = "white"
-          NKJV.style.color = "white"
-          pTag.style.color = "#FFD60A"
-          case "KJV":
-          NLT.style.color = "white"
-          NKJV.style.color = "white"
-          pTag.style.color = "#FFD60A"
-        default:
+            KJV.style.color = 'white'
+            NLT.style.color = 'white'
+            pTag.style.color = '#FFD60A'
+          case 'NLT':
+            KJV.style.color = 'white'
+            NKJV.style.color = 'white'
+            pTag.style.color = '#FFD60A'
+          case 'KJV':
+            NLT.style.color = 'white'
+            NKJV.style.color = 'white'
+            pTag.style.color = '#FFD60A'
+          default:
         }
       }
-      
+
       const scriptUrl = `https://dailyverses.net/get/verse.js?language=${translation}`
-      
+
       loadScript(scriptUrl)
         .then(() => {
           // Update the data with the new verse text and translation
@@ -281,35 +286,33 @@ export default {
   },
   components: {
     RouterLink,
-    Navi,
-    Dailyverse
+    Navi
   }
 }
 </script>
 
 <style>
-#not-found {
-  line-height: 20;
+/* tags */
+button {
+  border-radius: 500px;
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  color: white;
+  text-align: center;
+  transition: 0.2 all ease;
+  background-color: #33415c;
 }
 
-#NKJV {
-  color: #FFD60A;
+button:hover {
+  filter: brightness(50%);
 }
 
-#NKJV,
-#NLT,
-#KJV:hover {
+button:hover {
   cursor: pointer;
-    user-select: none;
 }
 
-#translation-selector {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 5px;
-}
-
+/* classes */
 .dailyVerses > a {
   color: #ffd60a;
   text-align: center;
@@ -321,6 +324,38 @@ export default {
 
 .dailyVerses > a:hover {
   text-decoration: underline;
+}
+
+.nav-text {
+  color: white;
+}
+
+.selected-button {
+  background-color: #ffd60a !important;
+  color: black;
+}
+
+/* IDs */
+#not-found {
+  line-height: 20;
+}
+
+#NKJV {
+  color: #ffd60a;
+}
+
+#NKJV,
+#NLT,
+#KJV:hover {
+  cursor: pointer;
+  user-select: none;
+}
+
+#translation-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5px;
 }
 
 #dailyVersesWrapper {
@@ -371,34 +406,6 @@ export default {
   justify-content: space-between;
   align-items: baseline;
   margin: 20px;
-}
-
-.nav-text {
-  color: white;
-}
-
-button {
-  border-radius: 500px;
-  padding: 10px;
-  margin: 5px;
-  border: none;
-  color: white;
-  text-align: center;
-  transition: 0.2 all ease;
-  background-color: #33415c;
-}
-
-button:hover {
-  filter: brightness(50%);
-}
-
-.selected-button {
-  background-color: #ffd60a !important;
-  color: black;
-}
-
-button:hover {
-  cursor: pointer;
 }
 
 #buttons-flex {

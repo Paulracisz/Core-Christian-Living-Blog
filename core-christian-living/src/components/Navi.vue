@@ -1,26 +1,19 @@
 <template>
   <div class="rout-box">
-    <RouterLink class="nav-link route" to="/">
-      Home
-    </RouterLink>
-    <RouterLink class="nav-link route" to="/About">
-      About
-    </RouterLink>
-    <RouterLink class="nav-link route" to="/gospel-playlists">
-      Gospel Playlists
-    </RouterLink>
-    <RouterLink class="nav-link route" to="/bible-evidence">
-      Bible Evidence
-    </RouterLink>
+    <RouterLink class="nav-link route" to="/"> Home </RouterLink>
+    <RouterLink class="nav-link route" to="/About"> About </RouterLink>
+    <RouterLink class="nav-link route" to="/gospel-playlists"> Gospel Playlists </RouterLink>
+    <RouterLink class="nav-link route" to="/bible-evidence"> Bible Evidence </RouterLink>
   </div>
 </template>
 
 <script>
-import { RouterLink } from 'vue-router';
+import { RouterLink } from 'vue-router'
 export default {}
 </script>
 
 <style>
+/* classes */
 .rout-box {
   text-align: center;
   margin: 10px;
@@ -36,7 +29,6 @@ export default {}
 }
 
 .nav-link:hover {
-  color: #FFD60A;
+  color: #ffd60a;
 }
-
 </style>
