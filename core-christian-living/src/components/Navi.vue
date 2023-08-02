@@ -1,9 +1,9 @@
 <template>
   <div class="rout-box">
-    <RouterLink class="nav-link route" to="/"> Home </RouterLink>
-    <RouterLink class="nav-link route" to="/About"> About </RouterLink>
-    <RouterLink class="nav-link route" to="/gospel-playlists"> Gospel Playlists </RouterLink>
-    <RouterLink class="nav-link route" to="/bible-evidence"> Bible Evidence </RouterLink>
+    <RouterLink class="nav-link route homenavtag" to="/"> Home </RouterLink>
+    <RouterLink class="nav-link route aboutnavtag" to="/About"> About </RouterLink>
+    <RouterLink class="nav-link route gospelnavtag" to="/gospel-playlists"> Gospel Playlists </RouterLink>
+    <RouterLink class="nav-link route biblenavtag" to="/bible-evidence"> Bible Evidence </RouterLink>
   </div>
 </template>
 

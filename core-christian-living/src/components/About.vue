@@ -1,7 +1,16 @@
 <template>
   <div>
     <h1 class="title">Core Christian Living Blog</h1>
-    <Navi></Navi>
+    <div class="rout-box">
+      <RouterLink class="nav-link route homenavtag" to="/"> Home </RouterLink>
+      <RouterLink class="nav-link route selected" to="/About"> About </RouterLink>
+      <RouterLink class="nav-link route gospelnavtag" to="/gospel-playlists">
+        Gospel Playlists
+      </RouterLink>
+      <RouterLink class="nav-link route biblenavtag" to="/bible-evidence">
+        Bible Evidence
+      </RouterLink>
+    </div>
   </div>
   <div class="hero-img1">
     <h1 class="hero-text">
@@ -49,14 +58,6 @@
   <div class="credit-div"><p class="credit-text">Website Created By Paul Racisz © 2023</p></div>
 </template>
 
-<script>
-import Navi from '../components/Navi.vue'
-export default {
-  components: {
-    Navi
-  }
-}
-</script>
 
 <style>
 /* media queries */
@@ -71,6 +72,10 @@ export default {
 /* classes */
 .about-back {
   margin: 15px;
+}
+
+.selected {
+  color: #ffd60a;
 }
 
 .info {

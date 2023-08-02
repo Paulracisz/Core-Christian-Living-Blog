@@ -2,7 +2,16 @@
   <div id="giant-div">
     <div id="title-box">
       <h1 class="title">Core Christian Living Blog</h1>
-      <Navi></Navi>
+      <div class="rout-box">
+        <RouterLink class="nav-link route selected" to="/"> Home </RouterLink>
+        <RouterLink class="nav-link route" to="/About"> About </RouterLink>
+        <RouterLink class="nav-link route gospelnavtag" to="/gospel-playlists">
+          Gospel Playlists
+        </RouterLink>
+        <RouterLink class="nav-link route biblenavtag" to="/bible-evidence">
+          Bible Evidence
+        </RouterLink>
+      </div>
     </div>
     <div id="search">
       <input id="Search-Bar" v-on:change="changeHandler" placeholder="Search" />
@@ -15,7 +24,9 @@
           <button id="prayer-button" v-on:click="sortByTopicAPICall('Prayer')">Prayers</button>
           <button id="study-button" v-on:click="sortByTopicAPICall('Study')">Bible Studies</button>
           <button id="evidence-button" v-on:click="sortByTopicAPICall('Evidence')">Evidence</button>
-          <button id="testimony-button" v-on:click="sortByTopicAPICall('Testimony')">Testimony</button>
+          <button id="testimony-button" v-on:click="sortByTopicAPICall('Testimony')">
+            Testimony
+          </button>
         </div>
       </div>
     </div>
@@ -53,7 +64,7 @@
       <h2 id="verse-header">Verse of the Day</h2>
       <div id="translation-selector">
         <p id="NKJV" v-on:click="loadAndWriteToDiv('NKJV')">(NKJV)</p>
-        <p id="NLT" v-on:click="loadAndWriteToDiv('NLT')">(NLT)</p>
+        <p id="ESV" v-on:click="loadAndWriteToDiv('ESV')">(ESV)</p>
         <p id="KJV" v-on:click="loadAndWriteToDiv('KJV')">(KJV)</p>
       </div>
       <div id="dailyVersesWrapper">
@@ -67,8 +78,6 @@
 </template>
 
 <script>
-// components
-import Navi from '../components/Navi.vue'
 
 // libraries
 import { RouterLink } from 'vue-router'
@@ -136,20 +145,20 @@ export default {
       }
       let pTag = document.getElementById(`${translation}`)
       let NKJV = document.getElementById('NKJV')
-      let NLT = document.getElementById('NLT')
+      let ESV = document.getElementById('ESV')
       let KJV = document.getElementById('KJV')
       if (pTag) {
         switch (pTag.id) {
           case 'NKJV':
             KJV.style.color = 'white'
-            NLT.style.color = 'white'
+            ESV.style.color = 'white'
             pTag.style.color = '#FFD60A'
-          case 'NLT':
+          case 'ESV':
             KJV.style.color = 'white'
             NKJV.style.color = 'white'
             pTag.style.color = '#FFD60A'
           case 'KJV':
-            NLT.style.color = 'white'
+            ESV.style.color = 'white'
             NKJV.style.color = 'white'
             pTag.style.color = '#FFD60A'
           default:
@@ -299,8 +308,7 @@ export default {
     }
   },
   components: {
-    RouterLink,
-    Navi
+    RouterLink
   }
 }
 </script>
@@ -359,7 +367,7 @@ button:hover {
 }
 
 #NKJV,
-#NLT,
+#ESV,
 #KJV:hover {
   cursor: pointer;
   user-select: none;

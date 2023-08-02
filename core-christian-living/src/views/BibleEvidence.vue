@@ -2,7 +2,16 @@
   <div id="large-box">
     <div id="title-box">
       <h1 class="title">Core Christian Living Blog</h1>
-      <Navi></Navi>
+      <div class="rout-box">
+        <RouterLink class="nav-link route" to="/"> Home </RouterLink>
+        <RouterLink class="nav-link route" to="/About"> About </RouterLink>
+        <RouterLink class="nav-link route" to="/gospel-playlists">
+          Gospel Playlists
+        </RouterLink>
+        <RouterLink class="nav-link route selected" to="/bible-evidence">
+          Bible Evidence
+        </RouterLink>
+      </div>
     </div>
     <h1>Bible Evidence</h1>
     <div id="bible-evidence-box">
@@ -798,16 +807,13 @@
 // libraries
 import { RouterLink } from 'vue-router'
 
-// components
-import Navi from '../components/Navi.vue'
 
 export default {
   data() {
     return {}
   },
   components: {
-    RouterLink,
-    Navi
+    RouterLink
   }
 }
 </script>
