@@ -170,6 +170,7 @@ p {
 #title-box {
   display: flex;
   flex-direction: row;
+  padding: 10px;
   justify-content: space-between;
   align-items: center;
 }
@@ -191,7 +192,8 @@ p {
 a,
 .green {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
+  margin: 5px;
+  color: white;
   transition: 0.4s;
 }
 
@@ -214,6 +216,7 @@ a,
 #search {
   display: flex;
   justify-content: baseline;
+  padding: 10px;
   align-items: baseline;
 }
 

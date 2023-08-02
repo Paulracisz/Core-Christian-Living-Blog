@@ -16,6 +16,7 @@ export default {}
 /* classes */
 .rout-box {
   text-align: center;
+  color: white;
   margin: 10px;
 }
 
