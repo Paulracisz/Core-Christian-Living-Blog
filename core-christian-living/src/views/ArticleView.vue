@@ -1,4 +1,17 @@
 <template>
+  <div id="title-box">
+    <h1 class="title">Core Christian Living Blog</h1>
+    <div class="rout-box">
+      <RouterLink class="nav-link route" to="/"> Home </RouterLink>
+      <RouterLink class="nav-link route" to="/About"> About </RouterLink>
+      <RouterLink class="nav-link route gospelnavtag" to="/gospel-playlists">
+        Gospel Playlists
+      </RouterLink>
+      <RouterLink class="nav-link route biblenavtag" to="/bible-evidence">
+        Bible Evidence
+      </RouterLink>
+    </div>
+  </div>
   <div id="header-flex">
     <h1 id="article-header"></h1>
   </div>
@@ -148,7 +161,7 @@ export default {
         result.map((article) => {
           if (article._id === articleId) {
             currentArticle = article
-            let h1 = document.querySelector('h1')
+            let h1 = document.getElementById('article-header')
             let text = document.getElementById('text')
             let date = document.getElementById('date')
             let createdBy = document.getElementById('created-by')
@@ -160,13 +173,13 @@ export default {
             createdBy.textContent = `Created By: ${currentArticle.createdBy}`
             h1.textContent = currentArticle.title
             // populate each paragraph with text
-            for (let i=2; i < 12; i++) {
+            for (let i = 2; i < 12; i++) {
               document.getElementById(`par${i}`).textContent = currentArticle[`paragraph${i}`]
             }
-            // populate each image 
-            for (let j=2; j < 12; j++) {
+            // populate each image
+            for (let j = 2; j < 12; j++) {
               if (currentArticle[`image${j}Url`])
-              document.getElementById(`image-${j}`).src = currentArticle[`image${j}Url`]
+                document.getElementById(`image-${j}`).src = currentArticle[`image${j}Url`]
             }
           }
         })
