@@ -66,8 +66,6 @@
 <!-- 
 Features to add:
 Possible add emoji reactions to the daily verse [] check out: https://github.com/IvanSotelo/VueFeedbackReaction
-Gospel playlist tab []
-Possibly add youtube embedded playlists in Gospel playlist tab []
 See about making potentially a christian radio for the website: https://www.icecast.org/download/ []
 Sign up for email notifications every time a new article is made []
 Sort BibleEvidence text, create section tags for easy navigation []
@@ -80,6 +78,8 @@ Scrapped Features:
 Add search bar in Bible Evidence page [Scrapped] (They can just use Ctrl+ F)
 
 Complete:
+Gospel playlist tab [X]
+Possibly add youtube embedded playlists in Gospel playlist tab [X]
 refactor all dry code [X]
 add comments explaining the code [X]
 format all files [X]

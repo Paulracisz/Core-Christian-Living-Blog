@@ -14,8 +14,9 @@
   </div>
   <div>
     <h1>Gospel Playlists</h1>
+    <div class="gospel-flex">
     <h2>American Gospel Music</h2>
-    <p>By: Helena Togbah</p>
+    <p class="by">By: Helena Togbah</p>
     <iframe
       width="560"
       height="315"
@@ -129,14 +130,22 @@
     <h2>Melodies From Heaven - Kirk Franklin</h2>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/x_bkzkO6n28" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   <br/>
-    <RouterLink id="back-home" to="/"> Back To Home </RouterLink>
+  <RouterLink id="back-home" to="/"> Back To Home </RouterLink>
+    </div>
   </div>
 </template>
 
 <script></script>
 
 <style>
-p {
+.by {
   color: whitesmoke;
+}
+
+.gospel-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 </style>
