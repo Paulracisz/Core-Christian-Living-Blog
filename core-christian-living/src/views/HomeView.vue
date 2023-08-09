@@ -254,23 +254,34 @@ export default {
       const studyButton = document.getElementById('study-button')
       const evidenceButton = document.getElementById('evidence-button')
       const allButton = document.getElementById('all-button')
+      const testimonyButton = document.getElementById('testimony-button')
       let h1 = document.getElementById('not-found')
       h1.textContent = ' '
       switch (topic) {
         case 'Prayer':
           prayerButton.classList.add('selected-button')
           allButton.classList.remove('selected-button')
+          testimonyButton.classList.remove('selected-button')
           studyButton.classList.remove('selected-button')
           evidenceButton.classList.remove('selected-button')
           break
         case 'Study':
           studyButton.classList.add('selected-button')
           allButton.classList.remove('selected-button')
+          testimonyButton.classList.remove('selected-button')
           prayerButton.classList.remove('selected-button')
           evidenceButton.classList.remove('selected-button')
           break
         case 'Evidence':
           evidenceButton.classList.add('selected-button')
+          testimonyButton.classList.remove('selected-button')
+          allButton.classList.remove('selected-button')
+          prayerButton.classList.remove('selected-button')
+          studyButton.classList.remove('selected-button')
+          break
+          case 'Testimony':
+          testimonyButton.classList.add('selected-button')
+          evidenceButton.classList.remove('selected-button')
           allButton.classList.remove('selected-button')
           prayerButton.classList.remove('selected-button')
           studyButton.classList.remove('selected-button')
