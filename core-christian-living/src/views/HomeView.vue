@@ -78,7 +78,6 @@
 </template>
 
 <script>
-
 // libraries
 import { RouterLink } from 'vue-router'
 import { loadScript } from 'vue-plugin-load-script'
@@ -108,13 +107,12 @@ export default {
           this.result = null // Clear the result
           h1.textContent = 'No Results Found'
         } else {
-          this.result = result.map((article) => {
-            const imageUrl = article.imageUrl
-            return {
+          this.result = result
+            .map((article) => ({
               ...article,
-              imageUrl
-            }
-          })
+              imageUrl: article.imageUrl
+            }))
+            .sort((a, b) => new Date(b._createdAt) - new Date(a._createdAt)) // Sort by _createdAt value
         }
       })
       .catch((err) => console.error(err))
@@ -227,10 +225,12 @@ export default {
       const studyButton = document.getElementById('study-button')
       const evidenceButton = document.getElementById('evidence-button')
       const allButton = document.getElementById('all-button')
+      const testimonyButton = document.getElementById('testimony-button')
       allButton.classList.add('selected-button')
       studyButton.classList.remove('selected-button')
       prayerButton.classList.remove('selected-button')
       evidenceButton.classList.remove('selected-button')
+      testimonyButton.classList.remove('selected-button')
       let PROJECT_ID = 'xinvfi3s'
       let DATASET = 'production'
       let QUERY = encodeURIComponent('*[_type == "article"]')
@@ -244,7 +244,7 @@ export default {
               ...article,
               imageUrl
             }
-          })
+          }).sort((a, b) => new Date(b._createdAt) - new Date(a._createdAt)) // Sort by _createdAt value
         })
         .catch((err) => console.error(err))
     },
@@ -279,7 +279,7 @@ export default {
           prayerButton.classList.remove('selected-button')
           studyButton.classList.remove('selected-button')
           break
-          case 'Testimony':
+        case 'Testimony':
           testimonyButton.classList.add('selected-button')
           evidenceButton.classList.remove('selected-button')
           allButton.classList.remove('selected-button')
@@ -300,7 +300,7 @@ export default {
               ...article,
               imageUrl
             }
-          })
+          }).sort((a, b) => new Date(b._createdAt) - new Date(a._createdAt)) // Sort by _createdAt value
         })
         .catch((err) => console.error(err))
     }
